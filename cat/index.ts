@@ -4,20 +4,20 @@ function setup() {
 
     //Kopf
     strokeWeight(3);
-    fill("lightgrey"); 
+    fill("lightgrey");
     stroke("black")
     circle(250, 270, 270);
 
     //Auge Links
-    fill("black"); 
+    fill("black");
     circle(210, 250, 35);
 
     //Auge Rechts
-    fill("black"); 
+    fill("black");
     circle(290, 250, 35);
 
     //Nase
-    fill("pink"); 
+    fill("pink");
     stroke("black")
     triangle(230, 280, 250, 300, 270, 280);
 
@@ -36,13 +36,5 @@ function setup() {
     fill("lightgrey");
     triangle(145, 175, 200, 130, 160, 70);
     triangle(300, 130, 355, 175, 340, 70);
-
-
-
-    
-    
-
-
-
 
 }
