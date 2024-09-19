@@ -12,9 +12,16 @@ function setup() {
     fill("black"); //Auge Rechts
     circle(290, 250, 35);
 
-    fill("pink");
+    fill("pink"); //Nase
     stroke("black")
-    triangle(230, )
+    strokeWeight(3);
+    triangle(230, 280, 250, 300, 270, 280);
+
+    line(250, 300, 250, 330);
+    line(250, 330, 285, 345);
+    line(250, 330, 215, 345);
+    line(285, 345, 320, 335);
+    
 
     
     
