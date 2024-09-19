@@ -2,6 +2,7 @@ function setup() {
     createCanvas(500, 500);
     background("#00FFFF");
 
+    strokeWeight(3);
     fill("lightgrey"); //Kopf
     stroke("black")
     circle(250, 270, 270);
@@ -14,7 +15,6 @@ function setup() {
 
     fill("pink"); //Nase
     stroke("black")
-    strokeWeight(3);
     triangle(230, 280, 250, 300, 270, 280);
 
     //Bart
@@ -29,8 +29,9 @@ function setup() {
     line(267, 315, 320, 300);
 
     //Ohren
-    fill("")
-
+    fill("lightgrey");
+    triangle(165, 155, 220, 130, 190, 70);
+    triangle(275, 130, 335, 155, 305, 70);
 
 
 
