@@ -5,7 +5,7 @@ function setup() {
 
 function mouseClicked() {
     noStroke();
-    fill("red");
+    fill("black");
     circle(mouseX, mouseY, 10);
 
     fill("gold");
@@ -18,9 +18,16 @@ function mouseClicked() {
 }
 
 function mouseMoved(){
-    circle(mouseX, mouseY, )10
+    noStroke();
     fill("green");
+    circle(mouseX, mouseY, 10)
     
+    fill("black");
+     fill("gold");
+    noStroke();
 
+    rect(width / 2, height - 20, width , height);
 
+    fill("black");
+    text(`X: ${mouseX}, Y: ${mouseY}`,width - 100, height - 5);
 }
