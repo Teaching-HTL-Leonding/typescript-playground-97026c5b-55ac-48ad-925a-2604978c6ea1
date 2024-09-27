@@ -1,33 +1,17 @@
 function setup() {
-    createCanvas(300, 300);
-    background("gold");
-    }
+    createCanvas(400, 400);
+    const text1:string =`Hello`;
+    const text2:string=`World`;
 
-function mouseClicked() {
-    noStroke();
-    fill("black");
-    circle(mouseX, mouseY, 10);
+    let text3 =`${text1} ${text2}`;
+    text3 = `${text3}`;
+    text(text3, 50, 50);
 
-    fill("gold");
-    noStroke();
-
-    rect(0, height - 20, width / 2, height);
-
-    fill("black");
-    text(`X: ${mouseX}, Y: ${mouseY}`, 5, height - 5);
+    const longText = `dddddddddddddddddddddddddd ddddddddddddddddddddd ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd`;
+    text(longText, 0, 200, 400, 400);
 }
 
-function mouseMoved(){
-    noStroke();
-    fill("green");
-    circle(mouseX, mouseY, 10)
-    
-    fill("black");
-     fill("gold");
-    noStroke();
+function draw() {
 
-    rect(width / 2, height - 20, width , height);
 
-    fill("black");
-    text(`X: ${mouseX}, Y: ${mouseY}`,width - 100, height - 5);
 }
