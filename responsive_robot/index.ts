@@ -14,6 +14,10 @@ function setup() {
   const mundY = headHeight * 1.2;
   const mundlaenge = headWidth * 0.5;
   const mundhoehe = headHeight * 0.1;
+  const antennenstartY = headHeight / 2;
+  const antennenendeY = antennenstartY * 0.5;
+  const antennenkopfd = eyed * 0.5;
+
 
   // Draw the robot's head
   fill("gray");
@@ -26,9 +30,9 @@ function setup() {
   fill("white");
   rect(viertelkopfx, mundY, mundlaenge, mundhoehe); // Mund
 
+  line(headWidth, antennenstartY, headWidth, antennenendeY);
 
-
-
+  circle(headWidth, antennenendeY, antennenkopfd);
 
   // Add your code here
 }
