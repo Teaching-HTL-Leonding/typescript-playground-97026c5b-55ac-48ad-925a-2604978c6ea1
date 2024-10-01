@@ -3,30 +3,24 @@ function setup() {
   background("lightblue");
 }
 
-
+let position_clicks: string = "0/0";
 function mouseClicked() {
-  //background("lightblue");
-    const text1:string =`mouseX`;
-    const text2:string=`mouseY`;
-    const text3:string ="/";
+  background("lightblue");
 
-    let text4 =`${text1}${text3}${text2}`;
-    text4 = `${text4}`;
- // const xco: string = "0 + mouseX";
- // const yco: string = "0 + mouseY";
-  //const zco: string = "/";
-
-  //let text1: string = "${xco} ${zco} ${yco}";
-  //text1= "${text1}";
-  
-  stroke("black");
-  text(text4, 0, 10);
-  noStroke();
+  noFill();
   fill("cyan");
-  circle(mouseX, mouseY, 40);
-  
+  noStroke();
+  circle(mouseX, mouseY, 50);
+
+  position_clicks = `${position_clicks}, ${mouseX},/${mouseY}`;
+
+  fill("lightblue")
+  rect(0, 0, width, 50);
+
+  fill("black");
+  textSize(20);
+  text(position_clicks, 10, 10, width - 10, height - 10);
 
 
 
-
-}
+  }
