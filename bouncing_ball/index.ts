@@ -1,5 +1,6 @@
 function setup() {
   createCanvas(300, 200);
+  //frameRate(60);
 }
 
 const circleDiameter = 50;
@@ -7,6 +8,7 @@ const circleDiameter = 50;
 let circleCenterX = 0;
 let circleCenterY = 0;
 let direction = 2;
+let direction1 = 2;
 
 // Remember: The _draw_ method is called FOR EVERY FRAME
 function draw() {
@@ -32,7 +34,7 @@ function draw() {
 
   circleCenterY += direction;
  
-  if(circleCenterY >= height || circleCenterY <= 0) {
-    direction*= -1;
-  }
+   if(circleCenterY >= 0 || circleCenterY <= height) {
+    direction1*= -1;
+   }
 }
