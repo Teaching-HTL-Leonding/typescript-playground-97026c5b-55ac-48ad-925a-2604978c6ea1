@@ -32,9 +32,9 @@ function draw() {
   fill("cyan");
   circle(width / 2, circleCenterY, circleDiameter);
 
-  circleCenterY += direction;
+  circleCenterY += direction1;
  
-   if(circleCenterY >= 0 || circleCenterY <= height) {
+   if(circleCenterY <= 0 || circleCenterY >= height) {
     direction1*= -1;
    }
 }
