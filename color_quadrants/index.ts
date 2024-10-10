@@ -55,11 +55,10 @@ function mouseClicked() {
     }
     
     fill("white");
-    textAlign(CENTER)
+    textAlign(CENTER, CENTER);
     textSize(50);
-    text(`${message}`, width / 2, height / 2 + 20);
+    text(`${message}`, width / 2, height / 2);
 
 
 }
 
-// <<< Add the function `moveClicked` with the required code here
