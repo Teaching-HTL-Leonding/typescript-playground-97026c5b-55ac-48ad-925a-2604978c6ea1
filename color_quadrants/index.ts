@@ -48,7 +48,7 @@ function mouseClicked() {
     } else if(mouseX > width / 2 && mouseY < height / 2) {
         message = "Green";
 
-    } else if( mouseX < width /2 && mouseY > height / 2) {
+    } else if( mouseX <= width /2 && mouseY > height / 2) {
         message = "Blue";
     } else{
         message = "Red";
@@ -61,4 +61,3 @@ function mouseClicked() {
 
 
 }
-
