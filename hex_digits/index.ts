@@ -80,4 +80,5 @@ function setup() {
   if (Math.floor(stelle3 % 16) === 15) {
     text("F", width / 6, height / 3, width / 6, height / 3);
   }
+
 }
