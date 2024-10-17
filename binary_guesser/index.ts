@@ -17,6 +17,7 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(20);
   text(`${num} in binary ?`, width / 2, height / 8)
+  
 
 }
 let stelle1 = 0;
@@ -66,7 +67,10 @@ function mouseClicked() {
     } else if (stelle4 === 1) {
       stelle4 = 0;
     }
-    if(stelle1)
+    if((num % 2) === stelle4 && ((num / 2) % 2) === stelle3 && ((num / 4) % 2) === stelle2 && ((num / 8) % 2) === stelle1) {
+      fill("lightgreen");
+      text("Correct!", width / 2, height * 0.8);
+    }
   }
 
 }
