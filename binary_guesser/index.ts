@@ -1,3 +1,4 @@
+//num = Math.floor(random(0, 16));
 let num = 0;
 
 function setup() {
@@ -17,7 +18,12 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(20);
   text(`${num} in binary ?`, width / 2, height / 8)
-  
+
+  /*text("0", width * 0.1, height / 3, width / 7, height / 3);
+  text("0", width * 0.325, height / 3, width / 7, height / 3);
+  text("0", width * 0.55, height / 3, width / 7, height / 3);
+  text("0", width * 0.75, height / 3, width / 7, height / 3);*/
+
 
 }
 let stelle1 = 0;
@@ -25,7 +31,10 @@ let stelle2 = 0;
 let stelle3 = 0;
 let stelle4 = 0;
 
+
 function mouseClicked() {
+
+
   textAlign(CENTER, CENTER);
   if (mouseX > width * 0.1 && mouseX < (width * 0.1 + width / 7) && mouseY > height / 3 && mouseY < (height / (2 / 3))) {
     fill("black");
@@ -67,7 +76,15 @@ function mouseClicked() {
     } else if (stelle4 === 1) {
       stelle4 = 0;
     }
-    if((num % 2) === stelle4 && ((num / 2) % 2) === stelle3 && ((num / 4) % 2) === stelle2 && ((num / 8) % 2) === stelle1) {
+    if (num = stelle4 * Math.pow(2, 3) + stelle3 * Math.pow(2, 2) + stelle2 * Math.pow(2, 1) + stelle1 * Math.pow(2, 0)) {
+      
+      noFill();
+      stroke("lightgreen");
+      rect(width * 0.1, height / 3, width / 7, height / 3);
+      rect(width * 0.325, height / 3, width / 7, height / 3);
+      rect(width * 0.55, height / 3, width / 7, height / 3);
+      rect(width * 0.75, height / 3, width / 7, height / 3);
+
       fill("lightgreen");
       text("Correct!", width / 2, height * 0.8);
     }
