@@ -19,10 +19,11 @@ function setup() {
   textSize(20);
   text(`${num} in binary ?`, width / 2, height / 8)
 
-  /*text("0", width * 0.1, height / 3, width / 7, height / 3);
-  text("0", width * 0.325, height / 3, width / 7, height / 3);
-  text("0", width * 0.55, height / 3, width / 7, height / 3);
-  text("0", width * 0.75, height / 3, width / 7, height / 3);*/
+ 
+      text(`${stelle1}`, width * 0.1, height / 3, width / 7, height / 3);
+      text(`${stelle2}`, width * 0.325, height / 3, width / 7, height / 3);
+      text(`${stelle3}`, width * 0.55, height / 3, width / 7, height / 3);
+      text(`${stelle4}`, width * 0.75, height / 3, width / 7, height / 3);
 
 
 }
@@ -73,21 +74,25 @@ function mouseClicked() {
     text(`${stelle4}`, width * 0.75, height / 3, width / 7, height / 3);
     if (stelle4 === 0) {
       stelle4 = 1;
-    } else if (stelle4 === 1) {
+    }  if (stelle4 === 1) {
       stelle4 = 0;
     }
-    if (num = stelle4 * Math.pow(2, 3) + stelle3 * Math.pow(2, 2) + stelle2 * Math.pow(2, 1) + stelle1 * Math.pow(2, 0)) {
-      
-      noFill();
+    }
+    if (num === stelle4 * Math.pow(2, 3) + stelle3 * Math.pow(2, 2) + stelle2 * Math.pow(2, 1) + stelle1 * Math.pow(2, 0)) {
+      fill("black");
       stroke("lightgreen");
       rect(width * 0.1, height / 3, width / 7, height / 3);
       rect(width * 0.325, height / 3, width / 7, height / 3);
       rect(width * 0.55, height / 3, width / 7, height / 3);
       rect(width * 0.75, height / 3, width / 7, height / 3);
-
+      
       fill("lightgreen");
+      text(`${stelle1}`, width * 0.1, height / 3, width / 7, height / 3);
+      text(`${stelle2}`, width * 0.325, height / 3, width / 7, height / 3);
+      text(`${stelle3}`, width * 0.55, height / 3, width / 7, height / 3);
+      text(`${stelle4}`, width * 0.75, height / 3, width / 7, height / 3);
       text("Correct!", width / 2, height * 0.8);
-    }
+    
   }
 
 }
