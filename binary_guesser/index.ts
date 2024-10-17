@@ -79,8 +79,7 @@ function mouseClicked() {
     text(`${stelle4}`, width * 0.75, height / 3, width / 7, height / 3);
     }
 
-    const userguess = stelle1 * Math.pow(2, 3) + stelle2 * Math.pow(2, 2) + stelle3 * Math.pow(2, 1) + stelle4 * Math.pow(2, 0);
-    text(userguess, 10, 50);
+ 
 
     if (num === stelle1 * Math.pow(2, 3) + stelle2 * Math.pow(2, 2) + stelle3 * Math.pow(2, 1) + stelle4 * Math.pow(2, 0)) {
     fill("green");
