@@ -78,6 +78,9 @@ function mouseClicked() {
     }if(mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50+ ICON_HEIGHT) {
         selected = "✂️";
     }
-    
+    let computerpick = Math.floor(random(1,3));
+    if(computerpick === 0) {
+        computer = "🪨";
+    }
     
   }
