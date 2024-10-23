@@ -19,12 +19,15 @@ function setup() {
     textSize(30);
     text("Human:", TEXT_LEFT, 50);
     
+    
 
     // Display the icons for "stone", "paper", and "scissors".
     textSize(75);
     text("🪨", STONE_LEFT, 150);
     text("📃", PAPER_LEFT, 150);
     text("✂️", SCISSORS_LEFT, 150);
+
+   
     // <<< Add your code here
 }
 
@@ -68,7 +71,7 @@ let selected = "";
 let computer = "";
 function mouseClicked() {
   // <<< Add code here to let the user choose an option and find out the winner
-   if(computer === "")
+   if(computer === "") {
     if(mouseX >= 50 && mouseX <= 50 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT ) {
         selected = "🪨";
 
@@ -78,9 +81,39 @@ function mouseClicked() {
     }if(mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50+ ICON_HEIGHT) {
         selected = "✂️";
     }
-    let computerpick = Math.floor(random(1,3));
+    let computerpick = Math.floor(random(0,3));
     if(computerpick === 0) {
         computer = "🪨";
+    } else if(computerpick === 1) {
+        computer ="📃";
+    }  else if(computerpick === 2) {
+        computer ="✂️";
+    }
+    noStroke();
+    textSize(30);
+    fill("yellow");
+    text("Computer:", TEXT_LEFT, 300);
+    textSize(75);
+    text(computer, 175, 300);
+    textSize(30);
+
+    if(selected === computer) {
+        text("It´s a tie!", TEXT_LEFT, 450);
+    }else if(selected === "🪨"&& computer === "📃") {
+        text("Computer wins!", TEXT_LEFT, 450);
+    }else if(selected === "🪨" && computer === "✂️"){
+        text("Human wins!", TEXT_LEFT, 450);
+    }else if(selected === "📃"&& computer ==="🪨") {
+        text("Human wins!", TEXT_LEFT, 450);
+    }else if(selected === "📃"&& computer ==="✂️"){
+        text("Computer wins!", TEXT_LEFT, 450);
+    } else if(selected === "✂️"&& computer === "🪨"){
+        text("Computer wins!", TEXT_LEFT, 450)
+    } else if(selected === "✂️"&& computer === "📃"){
+        text("Human wins!",)
     }
     
   }
+
+   }
+  
