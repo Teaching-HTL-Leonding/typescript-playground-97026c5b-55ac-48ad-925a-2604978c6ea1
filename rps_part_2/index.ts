@@ -98,24 +98,24 @@ function mouseClicked() {
     textSize(30);
 
 
-    let win:string =;
+    let result = "";
     if(selected === computer) {
-        text("It´s a tie!", TEXT_LEFT, 450);
+        result = "It`s a tie!";
     }else if(selected === "🪨"&& computer === "📃") {
-        text("Computer wins!", TEXT_LEFT, 450);
+        result = "Computer wins!";
     }else if(selected === "🪨" && computer === "✂️"){
-        text("Human wins!", TEXT_LEFT, 450);
+        result = "Human wins!";
     }else if(selected === "📃"&& computer ==="🪨") {
-        text("Human wins!", TEXT_LEFT, 450);
+        result = "Human wins!";
     }else if(selected === "📃"&& computer ==="✂️"){
-        text("Computer wins!", TEXT_LEFT, 450);
+        result = "Computer wins!";
     } else if(selected === "✂️"&& computer === "🪨"){
-        text("Computer wins!", TEXT_LEFT, 450)
+        result = "Computer wins!";
     } else if(selected === "✂️"&& computer === "📃"){
-        text("Human wins!",TEXT_LEFT, 450);
+        result = "Human wins!";
     }
-    
+    text(`${result}`,TEXT_LEFT, 450);
   }
 
    }
-  
+ 
