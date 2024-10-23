@@ -18,8 +18,8 @@ function setup() {
     fill("yellow");
     textSize(30);
     text("Human:", TEXT_LEFT, 50);
-    
-    
+
+
 
     // Display the icons for "stone", "paper", and "scissors".
     textSize(75);
@@ -27,13 +27,13 @@ function setup() {
     text("📃", PAPER_LEFT, 150);
     text("✂️", SCISSORS_LEFT, 150);
 
-   
+
     // <<< Add your code here
 }
 
 function mouseMoved() {
     // <<< Add your code here
-    if(mouseX >= 50 && mouseX <= 50 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT ) {
+    if (mouseX >= 50 && mouseX <= 50 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
         noFill();
         stroke("yellow");
         strokeWeight(5);
@@ -42,80 +42,79 @@ function mouseMoved() {
         noFill();
         stroke("black");
         strokeWeight(5);
-        rect(50, 75, 100, 100);       
+        rect(50, 75, 100, 100);
     }
-    if(mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50+ ICON_HEIGHT) {
+    if (mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
         noFill();
         stroke("yellow");
         strokeWeight(5);
-        rect(175, 75, 100, 100);       
-    }else {
+        rect(175, 75, 100, 100);
+    } else {
         noFill();
         stroke("black");
         strokeWeight(5);
-        rect(175, 75, 100, 100);       
+        rect(175, 75, 100, 100);
     }
-    if(mouseX >= 300 && mouseX <= 300 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50+ ICON_HEIGHT) {
+    if (mouseX >= 300 && mouseX <= 300 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
         noFill();
         stroke("yellow");
         strokeWeight(5);
-        rect(300, 75, 100, 100);       
-    }else {
+        rect(300, 75, 100, 100);
+    } else {
         noFill();
         stroke("black");
         strokeWeight(5);
-        rect(300, 75, 100, 100); 
+        rect(300, 75, 100, 100);
     }
 }
 let selected = "";
 let computer = "";
 function mouseClicked() {
-  // <<< Add code here to let the user choose an option and find out the winner
-   if(computer === "") {
-    if(mouseX >= 50 && mouseX <= 50 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT ) {
-        selected = "🪨";
+    // <<< Add code here to let the user choose an option and find out the winner
+    if (computer === "") {
+        if (mouseX >= 50 && mouseX <= 50 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+            selected = "🪨";
 
-    }if(mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50+ ICON_HEIGHT) {
-        selected ="📃";
+        } if (mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+            selected = "📃";
 
-    }if(mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50+ ICON_HEIGHT) {
-        selected = "✂️";
+        } if (mouseX >= 300 && mouseX <= 300 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+            selected = "✂️";
+        }
+        let computerpick = Math.floor(random(0, 3));
+        if (computerpick === 0) {
+            computer = "🪨";
+        } else if (computerpick === 1) {
+            computer = "📃";
+        } else if (computerpick === 2) {
+            computer = "✂️";
+        }
+        noStroke();
+        textSize(30);
+        fill("yellow");
+        text("Computer:", TEXT_LEFT, 300);
+        textSize(75);
+        text(computer, 175, 300);
+        textSize(30);
+
+
+        let result = "";
+        if (selected === computer) {
+            result = "It`s a tie!";
+        } else if (selected === "🪨" && computer === "📃") {
+            result = "Computer wins!";
+        } else if (selected === "🪨" && computer === "✂️") {
+            result = "Human wins!";
+        } else if (selected === "📃" && computer === "🪨") {
+            result = "Human wins!";
+        } else if (selected === "📃" && computer === "✂️") {
+            result = "Computer wins!";
+        } else if (selected === "✂️" && computer === "🪨") {
+            result = "Computer wins!";
+        } else if (selected === "✂️" && computer === "📃") {
+            result = "Human wins!";
+        }
+        text(`${result}`, TEXT_LEFT, 450);
     }
-    let computerpick = Math.floor(random(0,3));
-    if(computerpick === 0) {
-        computer = "🪨";
-    } else if(computerpick === 1) {
-        computer ="📃";
-    }  else if(computerpick === 2) {
-        computer ="✂️";
-    }
-    noStroke();
-    textSize(30);
-    fill("yellow");
-    text("Computer:", TEXT_LEFT, 300);
-    textSize(75);
-    text(computer, 175, 300);
-    textSize(30);
 
-
-    let result = "";
-    if(selected === computer) {
-        result = "It`s a tie!";
-    }else if(selected === "🪨"&& computer === "📃") {
-        result = "Computer wins!";
-    }else if(selected === "🪨" && computer === "✂️"){
-        result = "Human wins!";
-    }else if(selected === "📃"&& computer ==="🪨") {
-        result = "Human wins!";
-    }else if(selected === "📃"&& computer ==="✂️"){
-        result = "Computer wins!";
-    } else if(selected === "✂️"&& computer === "🪨"){
-        result = "Computer wins!";
-    } else if(selected === "✂️"&& computer === "📃"){
-        result = "Human wins!";
-    }
-    text(`${result}`,TEXT_LEFT, 450);
-  }
-
-   }
- 
+}
