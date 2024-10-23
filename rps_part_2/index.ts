@@ -97,6 +97,8 @@ function mouseClicked() {
     text(computer, 175, 300);
     textSize(30);
 
+
+    let win:string =;
     if(selected === computer) {
         text("It´s a tie!", TEXT_LEFT, 450);
     }else if(selected === "🪨"&& computer === "📃") {
@@ -110,7 +112,7 @@ function mouseClicked() {
     } else if(selected === "✂️"&& computer === "🪨"){
         text("Computer wins!", TEXT_LEFT, 450)
     } else if(selected === "✂️"&& computer === "📃"){
-        text("Human wins!",)
+        text("Human wins!",TEXT_LEFT, 450);
     }
     
   }
