@@ -55,6 +55,7 @@ function mouseClicked() {
     let nmb8: string;
     let nmb9: string;
     let nmb0: string;
+    let nmbC: string;
 
     if(mouseX <= width / 3 && mouseY >= height * 1 / 5 && mouseY <= height * 2 / 5) {
         nmb1 = "1";
