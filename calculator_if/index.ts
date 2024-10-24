@@ -63,6 +63,23 @@ function mouseClicked() {
         nmb2 = "2";
     }else if(mouseX > width * 2 / 3 && mouseY >= height + 1 / 5 && mouseY <= height * 2 / 5) {
         nmb3 = "3";
+    }else if(mouseX <= width / 3 && mouseY >= height * 2 / 5 && mouseY <= height * 3 / 5) {
+        nmb4 = "4";
+    }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY > height * 2 / 5 && mouseY <= height * 3 / 5) {
+        nmb5 = "5";
+    }else if(mouseX > width * 2 / 3 && mouseY >= height + 2 / 5 && mouseY < height * 3 / 5) {
+        nmb6 = "6";
+    }else if(mouseX <= width / 3 && mouseY >= height * 3 / 5 && mouseY <= height * 4 / 5) {
+        nmb7 = "7";
+    }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY > height * 3 / 5 && mouseY <= height * 4 / 5) {
+        nmb8 = "8";
+    }else if(mouseX > width * 2 / 3 && mouseY >= height + 3 / 5 && mouseY < height * 4 / 5) {
+        nmb9 = "9";
+    }else if(mouseX <= width * 2 / 3 && mouseY < height * 4 / 5) {
+        nmb0 ="0";
+    }else if(mouseX < width *2 / 3 && mouseY < height * 4 / 5) {
+        fill("white");  
+        rect(width / 30, height / 60, width * 0.925, height / 6);
     }
 
     // <<< Add code here
