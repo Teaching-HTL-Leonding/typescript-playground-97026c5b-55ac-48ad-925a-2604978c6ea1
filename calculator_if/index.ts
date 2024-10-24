@@ -45,7 +45,24 @@ function draw() {
 }
 
 function mouseClicked() {
-    let nmb: string;
-    
+    let nmb1: string;
+    let nmb2: string;
+    let nmb3: string;
+    let nmb4: string;
+    let nmb5: string;
+    let nmb6: string;
+    let nmb7: string;
+    let nmb8: string;
+    let nmb9: string;
+    let nmb0: string;
+
+    if(mouseX <= width / 3 && mouseY >= height * 1 / 5 && mouseY <= height * 2 / 5) {
+        nmb1 = "1";
+    }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY >= height * 1 / 5 && mouseY <= height * 2 / 5) {
+        nmb2 = "2";
+    }else if(mouseX > width * 2 / 3 && mouseY >= height + 1 / 5 && mouseY <= height * 2 / 5) {
+        nmb3 = "3";
+    }
+
     // <<< Add code here
 }
