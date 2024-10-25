@@ -58,25 +58,25 @@ function mouseClicked() {
     let nmbC: string;
 
     if(mouseX <= width / 3 && mouseY >= height * 1 / 5 && mouseY <= height * 2 / 5) {
-        nmb1 = "1";
+        nmb1 = "nmb1 * 10 + 1";
     }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY >= height * 1 / 5 && mouseY <= height * 2 / 5) {
-        nmb2 = "2";
+        nmb1 = "nmb1 * 10 + 2";
     }else if(mouseX > width * 2 / 3 && mouseY >= height + 1 / 5 && mouseY <= height * 2 / 5) {
-        nmb3 = "3";
+        nmb1 = "nmb1 * 10 + 3";
     }else if(mouseX <= width / 3 && mouseY >= height * 2 / 5 && mouseY <= height * 3 / 5) {
-        nmb4 = "4";
+        nmb1 = "nmb1 * 10 + 4";
     }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY > height * 2 / 5 && mouseY <= height * 3 / 5) {
-        nmb5 = "5";
+        nmb1 = "nmb1 * 10 + 5";
     }else if(mouseX > width * 2 / 3 && mouseY >= height + 2 / 5 && mouseY < height * 3 / 5) {
-        nmb6 = "6";
+        nmb1 = "nmb1 * 10 + 6";
     }else if(mouseX <= width / 3 && mouseY >= height * 3 / 5 && mouseY <= height * 4 / 5) {
-        nmb7 = "7";
+        nmb1 = "nmb1 * 10 + 7";
     }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY > height * 3 / 5 && mouseY <= height * 4 / 5) {
-        nmb8 = "8";
+        nmb1 = "nmb1 * 10 + 8";
     }else if(mouseX > width * 2 / 3 && mouseY >= height + 3 / 5 && mouseY < height * 4 / 5) {
-        nmb9 = "9";
+        nmb1 = "nmb1 * 10 + 9";
     }else if(mouseX <= width * 2 / 3 && mouseY < height * 4 / 5) {
-        nmb0 ="0";
+        nmb1 = "nmb1 * 10 + 0";
     }else if(mouseX < width *2 / 3 && mouseY < height * 4 / 5) {
         fill("white");  
         rect(width / 30, height / 60, width * 0.925, height / 6);
