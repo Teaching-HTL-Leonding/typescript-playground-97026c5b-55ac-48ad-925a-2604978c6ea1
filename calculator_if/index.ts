@@ -81,6 +81,7 @@ function mouseClicked() {
         fill("white");  
         rect(width / 30, height / 60, width * 0.925, height / 6);
     }
-
+    fill("black");
+    text(`${nmb1}`, width, height / 10 );
     // <<< Add code here
 }
