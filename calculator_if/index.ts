@@ -39,49 +39,51 @@ function draw() {
     text("C", width * 5 / 6, height * 4.5 / 5);
     text("0", width / 3, height * 4.5 / 5);
 
+    textAlign(CENTER, RIGHT);
+    fill("black");
+    text(displaynumber, width * 0.85, height / 10);
    
 
     // <<< Add code here
 }
 
+    let displaynumber: string = "";
 function mouseClicked() {
-    let nmb1: string;
-    let nmb2: string;
-    let nmb3: string;
-    let nmb4: string;
-    let nmb5: string;
-    let nmb6: string;
-    let nmb7: string;
-    let nmb8: string;
-    let nmb9: string;
-    let nmb0: string;
-    let nmbC: string;
 
-    if(mouseX <= width / 3 && mouseY >= height * 1 / 5 && mouseY <= height * 2 / 5) {
-        nmb1 = "nmb1 * 10 + 1";
-    }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY >= height * 1 / 5 && mouseY <= height * 2 / 5) {
-        nmb1 = "nmb1 * 10 + 2";
-    }else if(mouseX > width * 2 / 3 && mouseY >= height + 1 / 5 && mouseY <= height * 2 / 5) {
-        nmb1 = "nmb1 * 10 + 3";
-    }else if(mouseX <= width / 3 && mouseY >= height * 2 / 5 && mouseY <= height * 3 / 5) {
-        nmb1 = "nmb1 * 10 + 4";
-    }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY > height * 2 / 5 && mouseY <= height * 3 / 5) {
-        nmb1 = "nmb1 * 10 + 5";
-    }else if(mouseX > width * 2 / 3 && mouseY >= height + 2 / 5 && mouseY < height * 3 / 5) {
-        nmb1 = "nmb1 * 10 + 6";
-    }else if(mouseX <= width / 3 && mouseY >= height * 3 / 5 && mouseY <= height * 4 / 5) {
-        nmb1 = "nmb1 * 10 + 7";
-    }else if(mouseX > width / 3 && mouseX <= width * 2 / 3 && mouseY > height * 3 / 5 && mouseY <= height * 4 / 5) {
-        nmb1 = "nmb1 * 10 + 8";
-    }else if(mouseX > width * 2 / 3 && mouseY >= height + 3 / 5 && mouseY < height * 4 / 5) {
-        nmb1 = "nmb1 * 10 + 9";
-    }else if(mouseX <= width * 2 / 3 && mouseY < height * 4 / 5) {
-        nmb1 = "nmb1 * 10 + 0";
-    }else if(mouseX < width *2 / 3 && mouseY < height * 4 / 5) {
-        fill("white");  
-        rect(width / 30, height / 60, width * 0.925, height / 6);
-    }
-    fill("black");
-    text(`${nmb1}`, width, height / 10 );
-    // <<< Add code here
+
+
+if(mouseX > 0 && mouseX < cellWidth && mouseY > lineHeight && mouseY < lineHeight * 2){
+displaynumber += "1";
 }
+if(mouseX > cellWidth && mouseX < cellWidth * 2 && mouseY > lineHeight && mouseY < lineHeight * 2){
+displaynumber += "2";
+}
+if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight && mouseY < lineHeight * 2){
+displaynumber += "3";
+}
+if(mouseX > 0 && mouseX < cellWidth && mouseY > lineHeight * 2 && mouseY < lineHeight * 3){
+displaynumber += "4";
+}
+if(mouseX > cellWidth && mouseX < cellWidth * 2 && mouseY > lineHeight * 2 && mouseY < lineHeight * 3){
+displaynumber += "5";
+}
+if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 2 && mouseY < lineHeight * 3){
+displaynumber += "6";
+}
+if(mouseX > 0 && mouseX < cellWidth && mouseY > lineHeight * 3 && mouseY < lineHeight * 4){
+displaynumber += "7";
+}
+if(mouseX > cellWidth  && mouseX < cellWidth * 2 && mouseY > lineHeight * 3 && mouseY < lineHeight * 4){
+displaynumber += "8";
+}
+if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 3 && mouseY < lineHeight * 4){
+displaynumber += "9";
+}
+if(mouseX > 0 && mouseX < cellWidth * 2 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
+displaynumber += "0";
+}
+if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
+displaynumber += "";
+} 
+    }
+    // <<< Add code here
