@@ -39,7 +39,7 @@ function draw() {
     text("C", width * 5 / 6, height * 4.5 / 5);
     text("0", width / 3, height * 4.5 / 5);
 
-    textAlign(CENTER, RIGHT);
+    textAlign(RIGHT, CENTER);
     fill("black");
     text(displaynumber, width * 0.85, height / 10);
    
