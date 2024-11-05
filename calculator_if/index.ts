@@ -5,7 +5,7 @@ let lineHeight: number = 0;   // Height of a line of the responsive layout
 let cellWidth: number = 0;    // Width of a cell of the responsive layout
 
 function setup() {
-    createCanvas(300, 400);
+    createCanvas(300, 600);
     lineHeight = height / 5;
     cellWidth = width / 3;
 }
@@ -47,7 +47,7 @@ function draw() {
     // <<< Add code here
 }
 
-let displaynumber: number = "";
+let displaynumber: number = 0;
 function mouseClicked() {
     fill("white");
     rect(width / 30, height / 60, width * 0.925, height / 6);
@@ -85,6 +85,7 @@ function mouseClicked() {
     }
     if (mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5)
         displaynumber = displaynumber - displaynumber;
+        
         
     }
     // <<< Add code here
