@@ -1,97 +1,69 @@
-
 let num = 0;
 
 function setup() {
   num = Math.floor(random(0, 16));
 
-
   createCanvas(400, 300);
   background("black");
-  stroke("yellow");
+
   noFill();
-  rect(width * 0.1, height / 3, width / 7, height / 3);
-  rect(width * 0.325, height / 3, width / 7, height / 3);
-  rect(width * 0.55, height / 3, width / 7, height / 3);
-  rect(width * 0.75, height / 3, width / 7, height / 3);
+  stroke("yellow")
+  rect(width / 8, height / 3, width / 8, height / 4);
+  rect(width * 2.5 / 8, height / 3, width / 8, height / 4);
+  rect(width / 2, height / 3, width / 8, height / 4);
+  rect(width * 5.5 / 8, height / 3, width / 8, height / 4);
+
 
   fill("yellow");
   textAlign(CENTER, CENTER);
-  textSize(20);
-  text(`${num} in binary ?`, width / 2, height / 8)
+  textSize(30);
+  text(`${num} in binary?`, width / 2, height / 5);
 
+  text("0", width * 1.5 / 8, height * 0.475);
+  text("0", width * 3 / 8, height * 0.475);
+  text("0", width * 4.5 / 8, height * 0.475);
+  text("0", width * 6 / 8, height * 0.475);
 
-  text("0", width * 0.1, height / 3, width / 7, height / 3);
-  text("0", width * 0.325, height / 3, width / 7, height / 3);
-  text("0", width * 0.55, height / 3, width / 7, height / 3);
-  text("0", width * 0.75, height / 3, width / 7, height / 3);
-
+  // <<< Add your code here
 }
-let stelle1 = 0;
-let stelle2 = 0;
-let stelle3 = 0;
-let stelle4 = 0;
 
 function mouseClicked() {
+  let nmb1: number = 0
+  let nmb2: number = 0;
+  let nmb3: number = 0;
+  let nmb4: number = 0;
 
-
-  textAlign(CENTER, CENTER);
-  if (mouseX > width * 0.1 && mouseX < (width * 0.1 + width / 7) && mouseY > height / 3 && mouseY < (height / (2 / 3))) {
+  if(mouseX >= width / 8 && mouseX <= width / 4 && mouseY >= height / 3 && mouseY <= height * 2 / 3){
     fill("black");
-    rect(width * 0.1, height / 3, width / 7, height / 3);
+    rect(width / 8, height / 3, width / 8, height / 4);
     fill("yellow");
-    if (stelle1 === 0) {
-      stelle1 = 1;
-    } else {
-      stelle1 = 0;
+    if(nmb1 ===0){
+      nmb1 = 1;
     }
-    text(`${stelle1}`, width * 0.1, height / 3, width / 7, height / 3);
-  } if (mouseX > width * 0.325 && mouseX < (width * 0.325 + width / 7) && mouseY > height / 3 && mouseY < (height / (2 / 3))) {
+    if(nmb1 === 1){
+      nmb1 = 0;
+    } 
+    //text(`${nmb1}`, width * 1.5 / 8, height * 0.475)
+  } if(mouseX >= width * 2.5 / 8 && mouseX <= width * 3.5 / 8 && mouseY >= height / 3 && mouseY <= height * 2 / 3){
     fill("black");
-    rect(width * 0.325, height / 3, width / 7, height / 3);
+    rect(width * 2.5 / 8, height / 3, width / 8, height / 4);
     fill("yellow");
-    if (stelle2 === 0) {
-      stelle2 = 1;
-    } else {
-      stelle2 = 0;
-    }
-    text(`${stelle2}`, width * 0.325, height / 3, width / 7, height / 3);
-  } if (mouseX > width * 0.55 && mouseX < (width * 0.55 + width / 7) && mouseY > height / 3 && mouseY < (height / (2 / 3))) {
+    //text(`${nmb2}`, width * 3 / 8, height * 0.475);
+    if(nmb2 === 0){nmb2 = 1;}
+    if(nmb2 === 1){nmb2 = 0;}  
+  } if(mouseX >= width / 2 && mouseX <= width * 5 / 8 && mouseY >= height / 3 && mouseY <= height * 2 / 3){
     fill("black");
-    rect(width * 0.55, height / 3, width / 7, height / 3);
+    rect(width / 2, height / 3, width / 8, height / 4);
+    //text(`${nmb3}`, width * 4.5 / 8, height * 0.475);
     fill("yellow");
-    if (stelle3 === 0) {
-      stelle3 = 1;
-    } else {
-      stelle3 = 0;
-    }
-    text(`${stelle3}`, width * 0.55, height / 3, width / 7, height / 3);
-  } if (mouseX > width * 0.75 && mouseX < (width * 0.75 + width / 7) && mouseY > height / 3 && mouseY < (height / (2 / 3))) {
+    if(nmb3 === 0){nmb3 = 1;}
+    if(nmb3 === 1){nmb3 = 0;}
+  } if(mouseX >= width * 5.5 / 8 && mouseX <= width * 6.5 / 8 && mouseY >= height / 3 && mouseY <= height * 2 / 3){
     fill("black");
-    rect(width * 0.75, height / 3, width / 7, height / 3);
+    rect(width * 5.5 / 8, height / 3, width / 8, height / 4);
     fill("yellow");
-    if (stelle4 === 0) {
-      stelle4 = 1;
-    } else {
-      stelle4 = 0;
-    }
-    text(`${stelle4}`, width * 0.75, height / 3, width / 7, height / 3);
+    if(nmb4 === 0){nmb4 = 1;}
+    if(nmb4 === 1){nmb4 = 0;}
+    //text(nmb4, width * 6 / 8, height * 0.475);
   }
-
-  if (num === stelle1 * Math.pow(2, 3) + stelle2 * Math.pow(2, 2) + stelle3 * Math.pow(2, 1) + stelle4 * Math.pow(2, 0)) {
-    fill("black");
-    stroke("lightgreen");
-    rect(width * 0.1, height / 3, width / 7, height / 3);
-    rect(width * 0.325, height / 3, width / 7, height / 3);
-    rect(width * 0.55, height / 3, width / 7, height / 3);
-    rect(width * 0.75, height / 3, width / 7, height / 3);
-
-    fill("lightgreen");
-    text(`${stelle1}`, width * 0.1, height / 3, width / 7, height / 3);
-    text(`${stelle2}`, width * 0.325, height / 3, width / 7, height / 3);
-    text(`${stelle3}`, width * 0.55, height / 3, width / 7, height / 3);
-    text(`${stelle4}`, width * 0.75, height / 3, width / 7, height / 3);
-    text("Correct!", width / 2, height * 0.8);
-
-  }
-
 }
