@@ -83,9 +83,14 @@ function mouseClicked() {
     if (mouseX > 0 && mouseX < cellWidth * 2 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5) {
         displaynumber = displaynumber * 10 + 0;
     }
-    if (mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5)
-        displaynumber = displaynumber - displaynumber;
+    if (mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
+        displaynumber = displaynumber - displaynumber;}
         
         
+        const oldNum = displaynumber;
+       let digit: number  = -1;
+        displaynumber = displaynumber;
+        if (displaynumber >= 10000) {
+            displaynumber = oldNum;}
     }
     // <<< Add code here
