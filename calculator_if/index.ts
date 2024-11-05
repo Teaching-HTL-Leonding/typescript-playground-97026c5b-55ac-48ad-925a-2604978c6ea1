@@ -83,7 +83,13 @@ if(mouseX > 0 && mouseX < cellWidth * 2 && mouseY > lineHeight * 4 && mouseY < l
 displaynumber += "0";
 }
 if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
-displaynumber += "";
+displaynumber = "0";
+fill("white");  
+ rect(width / 30, height / 60, width * 0.925, height / 6);
+
 } 
+const oldNum = displaynumber;
+        if (displaynumber >= 1000000000) {
+            num = oldNum;
     }
     // <<< Add code here
