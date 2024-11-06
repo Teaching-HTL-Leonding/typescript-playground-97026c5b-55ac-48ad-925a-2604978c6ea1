@@ -52,7 +52,7 @@ function mouseClicked() {
     fill("white");
     rect(width / 30, height / 60, width * 0.925, height / 6);
 
-
+if(displaynumber <= 1000000){
     if (mouseX > 0 && mouseX < cellWidth && mouseY > lineHeight && mouseY < lineHeight * 2) {
         displaynumber = displaynumber * 10 + 7;
     }
@@ -83,14 +83,9 @@ function mouseClicked() {
     if (mouseX > 0 && mouseX < cellWidth * 2 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5) {
         displaynumber = displaynumber * 10 + 0;
     }
+        
+}
     if (mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
         displaynumber = displaynumber - displaynumber;}
-        
-        
-        const oldNum = displaynumber;
-       let digit: number  = -1;
-        displaynumber = displaynumber;
-        if (displaynumber >= 10000) {
-            displaynumber = oldNum;}
     }
     // <<< Add code here
