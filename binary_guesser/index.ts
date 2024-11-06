@@ -21,7 +21,9 @@ function setup() {
   //textAlign(CENTER, CENTER);
   textSize(20);
   text(stelle1, width * 1.5 / 8, height * 6 / 12);
-  text(stelle2, )
+  text(stelle2, width * 3 / 8, height / 2);
+  text(stelle3, width * 4.5 / 8, height / 2);
+  text(stelle4, width * 6 / 8, height / 2);
   // <<< Add your code here
 }
 let stelle1 = 0;
