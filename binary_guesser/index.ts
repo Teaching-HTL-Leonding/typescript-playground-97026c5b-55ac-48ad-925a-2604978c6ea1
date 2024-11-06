@@ -18,20 +18,26 @@ function setup() {
   textAlign(CENTER);
   text(`${num} in binary ?`, width / 2, height / 5);
 
-  textAlign(CENTER, CENTER);
+  //textAlign(CENTER, CENTER);
   textSize(20);
-  text(stelle1, width / 5, height * 6 / 12);
+  text(stelle1, width * 1.5 / 8, height * 6 / 12);
+  text(stelle2, )
   // <<< Add your code here
 }
-let stelle1 = "0";
-let stelle2 
-let stelle3
-let stelle4
+let stelle1 = 0;
+let stelle2 = 0;
+let stelle3 = 0;
+let stelle4 = 0;
 function mouseClicked() {
-  if(mouseX >= width / 8 && mouseX <= width / 4 && mouseY >= height / 3 && mouseY <= height * 2 / 6){
-    if(stelle1 === ""){
-      stelle1 = "0";
-    } else {stelle1 = "1";}
+  if(mouseX >= width / 8 && mouseX <= width / 4 && mouseY >= height / 3 && mouseY <= height * 3 / 6){
+    if(stelle1 === 1){
+      stelle1 = 0;
+    } else {stelle1 = 1;}
+  }
+  if(mouseX >= width * 2.5 / 8 && mouseX <= width * 3.5 / 8 && mouseY >= height / 3 && mouseY <= height * 3 / 6){
+    if(stelle2 === 1){
+      stelle2 = 0;
+    } else{stelle2 = 1;}
   }
   
 }
