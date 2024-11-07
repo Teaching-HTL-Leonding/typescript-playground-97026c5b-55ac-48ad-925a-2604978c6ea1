@@ -45,11 +45,6 @@ function setup() {
     text(randomnumber2, width / 2, height / 2);
     text(randomnumber3, width * 0.8, height / 2);
 
-    if (position === 1) {
-        truenumber = randomnumber1;
-    } else if (position === 2) {
-        truenumber = randomnumber2;
-    } else { truenumber = randomnumber3; }
 
     if (operator === 1) {
         message = "+";
@@ -66,6 +61,11 @@ function setup() {
         truenumber = randomoperand1 * randomoperand2;
     }
 
+    if (position === 1) {
+        randomnumber1 = truenumber;
+    } else if (position === 2) {
+        randomnumber2 = truenumber;
+    } else { randomnumber3 = truenumber; }
 
     text(`${randomoperand1} ${message} ${randomoperand2}`, width / 2, height / 5);
 
@@ -74,9 +74,14 @@ function setup() {
 
 // mouseClicked function checks if the user clicked on the correct answer
 function mouseClicked() {
-    if (mouseX < width / 8 && mouseX < width * 1 / 5 * 1 / 8 && mouseY < height * 0.4 && mouseY < height * 0.6) {
-        fill("yelllow");
-        text("1", width / 2, height * 0.8)
+    textSize(30);
+    textAlign(CENTER);
+    if (mouseX > 50 && mouseX < 128 && mouseY > 210 && mouseY < 240 && randomnumber1 === truenumber) {
+        fill("green");
+        text(`${randomnumber1} ist richtig !`, width / 2, 230)
+    } else {
+        fill("red");
+        text(`${randomnumber1}, ist falsch!`, width / 2, 350);
     }
 
     // <<< TODO: Add your code here
