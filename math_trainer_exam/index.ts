@@ -4,6 +4,7 @@
 // <<< TODO: Declare your GLOBAL variables here
 let randomnumber1 = 0;
 let randomnumber2 = 0;
+let randomnumber3 = 0;
 let operator = 0;
 let randomoperand1 = 0;
 let randomoperand2 = 0;
@@ -78,7 +79,7 @@ function mouseClicked() {
     textAlign(CENTER);
     if (mouseX > 50 && mouseX < 128 && mouseY > 210 && mouseY < 240 && randomnumber1 === truenumber) {
         fill("green");
-        text(`${randomnumber1} ist richtig !`, width / 2, 230)
+        text(`${truenumber} ist richtig !`, width / 2, 230)
     } else {
         fill("red");
         text(`${randomnumber1}, ist falsch!`, width / 2, 350);
