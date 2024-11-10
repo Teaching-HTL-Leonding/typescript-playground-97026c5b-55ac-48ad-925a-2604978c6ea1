@@ -23,7 +23,7 @@ function setup() {
     rect(width * 3.25 / 8, height * 0.4, width / 5, height / 5);
     rect(width * 5.5 / 8, height * 0.4, width / 5, height / 5);
 
-    let randomnumber1 = Math.floor(random(1, 101));
+    let randomnumber1 = Math.floor(random(1, 101)); // RS: First minimum requirement solved
     let randomnumber2 = Math.floor(random(1, 101));
     let randomnumber3 = Math.floor(random(1, 101));
     let position = Math.floor(random(1, 4));
@@ -31,7 +31,8 @@ function setup() {
     let randomoperand1 = Math.floor(random(1, 101));
     let randomoperand2 = Math.floor(random(1, 101));
 
-
+    // RS: This does not make sense because the message variable has not
+    //     been set before -> contains an empty string.
     if (message === "+" || message === "-") {
         randomoperand1 = Math.floor(random(1, 101));
         randomoperand2 = Math.floor(random(1, 101))
@@ -47,6 +48,7 @@ function setup() {
     text(randomnumber3, width * 0.8, height / 2);
 
 
+    // RS: Second minimum requirement solved
     if (operator === 1) {
         message = "+";
     } else if (operator === 2) {
@@ -54,6 +56,9 @@ function setup() {
     } else if (operator === 3) {
         message = "*";
     }
+
+    // RS: This if statement is not necessary. You could have performed
+    //     the calculation in the previous statement -> lot of unnecessary code
     if (message === "+") {
         truenumber = randomoperand1 + randomoperand2;
     } else if (message === "-") {
@@ -62,6 +67,9 @@ function setup() {
         truenumber = randomoperand1 * randomoperand2;
     }
 
+    // RS: Third minimum requirement not solved. It does not make sense to
+    //     change the variables randomnumber1, 2, or three AFTER you display
+    //     them on the screen. You have to change the variables BEFORE displaying them.
     if (position === 1) {
         randomnumber1 = truenumber;
     } else if (position === 2) {
@@ -84,6 +92,9 @@ function mouseClicked() {
         fill("red");
         text(`${randomnumber1}, ist falsch!`, width / 2, 350);
     }
+
+    // RS: Third minimum requirement not solved. This code is not complete. 
+    //     It only covers the first variable, not all three.
 
     // <<< TODO: Add your code here
 }
