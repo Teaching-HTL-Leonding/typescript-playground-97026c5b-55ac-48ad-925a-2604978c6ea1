@@ -17,7 +17,7 @@ function setup() {
     i = GRID;
     while(i < SIZE - GRID){
         fill("green");
-        rect(i, SIZE - i - i, 25, 25);
+        rect(i, SIZE - i - 25, 25, 25);
         i += GRID;
     }
 
