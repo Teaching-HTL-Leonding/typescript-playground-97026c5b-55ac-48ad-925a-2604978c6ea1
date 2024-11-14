@@ -7,8 +7,8 @@ function setup() {
     createCanvas(SIZE, SIZE);
     background("black");
 
-    strokeWeight(0.25);
-    stroke("lightgray");
+    strokeWeight(0.5);
+    stroke("white");
 
     // Draw a grid by using a while loop.
     
