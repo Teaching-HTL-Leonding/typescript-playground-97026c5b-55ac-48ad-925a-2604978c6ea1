@@ -9,26 +9,29 @@ function setup() {
     stroke("lightgray");
 
     // Draw vertical lines
-    let i = 0;
+    let i = GRID;
     while (i < SIZE) {
         line(i, 0, i, SIZE);
-        i += 25;
+        i += GRID;
     }
 
     // Draw horizontal lines
+    stroke("yellow");
+    strokeWeight(2);
     i = GRID;
-    while (i < SIZE) {
-        stroke("yellow");
-        strokeWeight(2);
-        line(0, i, SIZE, i);
+    while(i < SIZE){
+        line(GRID, i, GRID * (i / GRID), i);
         i += GRID;
     }
-    while(i < SIZE)
 
     strokeWeight(2);
 
     // Draw left part of the lines
     stroke("yellow");
+    while(i < SIZE){
+        line(GRID, i, GRID * (i / GRID), i);
+        i += GRID;
+    }
     // <<< Write your code here
 
     // Draw right part of the lines
