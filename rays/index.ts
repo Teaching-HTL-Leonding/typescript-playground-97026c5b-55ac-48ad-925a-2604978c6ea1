@@ -5,19 +5,30 @@ const MARGIN = 25; // Margin between the edges and the rays.
 function setup() {
   createCanvas(SIZE, SIZE);
   background("black");
-    let i = GRID;           
+    let i = MARGIN;           
     while (i < SIZE) {  
         stroke("yellow");     
         line(i, 0, i, SIZE);
         stroke("green");
         line(0, i, SIZE, i);
-        i += GRID;           
+        i += MARGIN;           
     }
 }
 
 function mouseMoved() {
-  background("black");
-  
+  background("black"); 
   strokeWeight(2);
-  // <<< Add your code here
+      let i = MARGIN;           
+    while (i < SIZE) {  
+        stroke("green");     
+        line(i, 0, mouseX, mouseY)
+        line( i, SIZE, mouseX, mouseY);
+        stroke("yellow");
+        line(0, i, mouseX, mouseY);
+        line(SIZE, i, mouseX, mouseY);
+        i += MARGIN;           
+    }
 }
+
+  // <<< Add your code here
+
