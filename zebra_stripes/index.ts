@@ -3,14 +3,16 @@ function setup() {
     const STRIPE_THICKNESS = 50; // Thickness of the stripes
 
     createCanvas(SIZE, SIZE);
-    background("yellow");
+    background("black");
 
     noStroke();
 
     let i = STRIPE_THICKNESS;
     while(i < SIZE){
         fill("lime");
-        rect(i - i, 2 * i - 100, SIZE, STRIPE_THICKNESS);
+        rect(0, 2 * i - 100, SIZE, STRIPE_THICKNESS);
+        fill("yellow");
+        rect(0, 2 * i - 50, SIZE, STRIPE_THICKNESS);
         i += STRIPE_THICKNESS;
     }
 
