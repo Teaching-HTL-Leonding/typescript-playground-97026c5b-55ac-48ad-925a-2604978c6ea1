@@ -9,13 +9,16 @@ function setup() {
   strokeWeight(1);
   stroke("lime");
 
+  colorMode(RGB);
+
   let i = MARGIN;
-  while(i < SIZE){
-    line(MARGIN,i , SIZE - MARGIN, MARGIN);
-    i += MARGIN;
-    for(let j = MARGIN; j < SIZE - MARGIN; j += MARGIN){
-      line(MARGIN, j, SIZE - MARGIN, j + MARGIN);
+  let color = 0;
+  while(i <= SIZE - MARGIN){
+    stroke(color, 240, 170);
+    for(let j = MARGIN; j <= SIZE - MARGIN; j += MARGIN){
+      line(MARGIN, i, SIZE - MARGIN, j);
     }
+    i += MARGIN;
   }
   // <<< Add your code here
 }
