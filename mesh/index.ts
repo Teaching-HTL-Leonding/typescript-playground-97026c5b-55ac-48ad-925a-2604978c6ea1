@@ -13,7 +13,7 @@ function setup() {
   while(i < SIZE){
     line(MARGIN,i , SIZE - MARGIN, MARGIN);
     i += MARGIN;
-    for(let j =  MARGIN; j <= SIZE - MARGIN; j += MARGIN){
+    for(let j = MARGIN; j < SIZE - MARGIN; j += MARGIN){
       line(MARGIN, j, SIZE - MARGIN, j + MARGIN);
     }
   }
