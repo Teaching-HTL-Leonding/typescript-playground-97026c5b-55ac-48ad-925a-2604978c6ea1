@@ -7,8 +7,8 @@ function setup() {
 
     noStroke();
 
-    for(let i = SQUARE_SIZE; i < SIZE - 2 * SQUARE_SIZE; i += SQUARE_SIZE){
-        fill("white");
+    for(let i = SQUARE_SIZE; i < SIZE - SQUARE_SIZE; i += SQUARE_SIZE){
+        fill("beige");
         rect(i, i, SQUARE_SIZE, SQUARE_SIZE);
         rect(i + 2 * SQUARE_SIZE, i, SQUARE_SIZE, SQUARE_SIZE);
         rect(i, i + 2 * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
@@ -16,7 +16,7 @@ function setup() {
         rect(i, i + 4 * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
         rect(i + 6 * SQUARE_SIZE, i, SQUARE_SIZE, SQUARE_SIZE);
         rect(i, i + 6 * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
-        fill("red");
+        fill("brown");
         rect(i + SQUARE_SIZE, i, SQUARE_SIZE, SQUARE_SIZE);
         rect(i, i + SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
         rect(i + 3 * SQUARE_SIZE, i, SQUARE_SIZE, SQUARE_SIZE);
@@ -24,6 +24,10 @@ function setup() {
         rect(i, i + 3 * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
         rect(i + 5 * SQUARE_SIZE, i, SQUARE_SIZE, SQUARE_SIZE);
         rect(i, i + 5 * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+        fill("black");
+        rect(i,height - SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+        rect(width - SQUARE_SIZE, i, SQUARE_SIZE, SQUARE_SIZE);
+
     }
     
 
