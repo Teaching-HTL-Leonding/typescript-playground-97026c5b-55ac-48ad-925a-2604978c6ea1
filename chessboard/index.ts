@@ -29,14 +29,26 @@ function setup() {
         rect(width - SQUARE_SIZE, i, SQUARE_SIZE, SQUARE_SIZE);
 
     }
-    
-    for(let j = 1; j < 9; j += 1){
+    let j = 0;
+    while(j < 8){
         fill("white");
         textAlign(CENTER,CENTER);
         textSize(20);
-        for(let k = SQUARE_SIZE + 25; k < SIZE - SQUARE_SIZE; k += SQUARE_SIZE){
-            text(j, 25, k);
+        j++;
+            text(j, 25, height - SQUARE_SIZE * j - 25);
+
+            let letter ="";
+        switch(j){
+            case 1: letter = "h"; break;
+            case 2: letter = "g"; break;
+            case 3: letter = "f"; break;
+            case 4: letter = "e"; break;
+            case 5: letter = "d"; break;
+            case 6: letter = "c"; break;
+            case 7: letter = "b"; break;
+            case 8: letter = "a"; break;
         }
+        text(letter, width - SQUARE_SIZE * j - 25, height - 25);
     }
     // <<< Add the code for drawing the chess board here
 }
