@@ -30,6 +30,13 @@ function setup() {
 
     }
     
-
+    for(let j = 1; j < 9; j += 1){
+        fill("white");
+        textAlign(CENTER,CENTER);
+        textSize(20);
+        for(let k = SQUARE_SIZE + 25; k < SIZE - SQUARE_SIZE; k += SQUARE_SIZE){
+            text(j, 25, k);
+        }
+    }
     // <<< Add the code for drawing the chess board here
 }
