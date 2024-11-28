@@ -10,20 +10,20 @@ function setup() {
     background("black");
 
     strokeWeight(1);
-    stroke("yellow");
+    stroke("cyan");
     noFill();
 
     //translate(- SIDE_LENGTH, - SIDE_LENGTH)
-    for(let x = 0; x <= SIZE; x += SIDE_LENGTH){
+    for(let x = 0; x <= SIZE + HEIGHT; x += HEIGHT){
         push();
         translate(-SIDE_LENGTH / 2, - SIDE_LENGTH / 2);
-        for(let y = 0; y <= SIZE; y += SIDE_LENGTH){
-        triangle(0, SIDE_LENGTH, SIDE_LENGTH, SIDE_LENGTH, SIDE_LENGTH / 2, 0);
+        for(let y = 0; y <= SIZE + SIZE; y += SIDE_LENGTH){
+        triangle(0, HEIGHT, SIDE_LENGTH, HEIGHT, SIDE_LENGTH / 2, 0);
         translate(SIDE_LENGTH, 0);
         }
 
         pop();
-        translate(0, SIDE_LENGTH);
+        translate(0, HEIGHT);
     }
 
     // <<< Add code to draw the triangles here
