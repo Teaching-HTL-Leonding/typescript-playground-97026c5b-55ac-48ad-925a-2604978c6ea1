@@ -13,8 +13,10 @@ function setup() {
     stroke("yellow");
     noFill();
 
+    //translate(- SIDE_LENGTH, - SIDE_LENGTH)
     for(let x = 0; x <= SIZE; x += SIDE_LENGTH){
         push();
+        translate(-SIDE_LENGTH / 2, - SIDE_LENGTH / 2);
         for(let y = 0; y <= SIZE; y += SIDE_LENGTH){
         triangle(0, SIDE_LENGTH, SIDE_LENGTH, SIDE_LENGTH, SIDE_LENGTH / 2, 0);
         translate(SIDE_LENGTH, 0);
