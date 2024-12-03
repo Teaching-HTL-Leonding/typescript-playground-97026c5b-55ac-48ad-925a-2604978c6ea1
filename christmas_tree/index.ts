@@ -10,14 +10,23 @@ const TRUNK_HEIGHT = 50;
 function setup() {
   createCanvas(500, 500);
   background("black");
-  fill("green");
   noStroke();
+  fill("brown");
+  rect(width / 2 - 25, height * 3 / 4 - 10, 50, 50);
 
-  // <<< Draw the tree
-  for(let i = TOP_MARGIN; i <= 500; i += i + i * HEIGHT_TO_WIDTH_RATIO){
-   // translate(width / 2, i);
-    for(let j = INITIAL_TRIANGLE_BASE_WIDTH; j <= 500; j += j + j * SIZE_INCREASE_BY_LAYER){
-      triangle(width / 2 - j / 2, i, width / 2 + j / 2, i, width / 2, i - i / 2);
-    }
-  }
+ translate(width / 2, TOP_MARGIN);
+ fill("green");
+ let trianglewidth = INITIAL_TRIANGLE_BASE_WIDTH;
+ let color1 = 0;
+ for(let i = 0; i < NUMBER_OF_LAYERS; i ++){
+  fill("green");
+  triangle(- trianglewidth / 2,trianglewidth / 2, 0, 0, trianglewidth / 2, trianglewidth / 2);
+  colorMode(HSB);
+  fill(color1, 50, 50);
+  circle(- trianglewidth / 2, trianglewidth / 2 + 15, SPHERE_DIAMETER);
+  circle(trianglewidth / 2, trianglewidth / 2 + 15, SPHERE_DIAMETER);
+  translate(0, trianglewidth / 4);
+  trianglewidth *= 1.5;
+  color1 += 50;
+ }
 }
