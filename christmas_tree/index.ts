@@ -18,7 +18,7 @@ function setup() {
 
   let trianglewidth = INITIAL_TRIANGLE_BASE_WIDTH;
   let circlewidth = INITIAL_TRIANGLE_BASE_WIDTH;
-  let color1 = 0;
+  let color1 = 30;
   translate(width / 2 , TOP_MARGIN);
   push();
   for(let i = 0; i < NUMBER_OF_LAYERS; i ++){
@@ -31,12 +31,12 @@ function setup() {
   }
     for(let x = 0; x <= SIZE; x += 50){
     pop();
-      fill(color1 , 60, 60)
+      fill(color1 , 90, 60)
       circle(- circlewidth / 2, circlewidth / 2 + 15, SPHERE_DIAMETER);
       circle(circlewidth / 2, circlewidth / 2 + 15, SPHERE_DIAMETER);
       translate(0, circlewidth / 4);
       circlewidth *= 1.5;
-      color1 += 60;
+      color1 += 80;
     }
 
 }
