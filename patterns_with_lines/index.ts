@@ -33,7 +33,6 @@ function mouseMoved() {
     let HEIGHT_OF_LINE1 = 0;
     let HEIGHT_OF_LINE2 = 5;
     let color1 = 0;
-    if(mouseX <= width || mouseX >= 0){
     for (let x = 0; x < 601; x++) {
         colorMode(HSB);
         stroke(color1, 100, 100);
@@ -48,5 +47,5 @@ function mouseMoved() {
         HEIGHT_OF_LINE1 = 0;
         HEIGHT_OF_LINE2 = 5;
     }
-    }
+    
 }
