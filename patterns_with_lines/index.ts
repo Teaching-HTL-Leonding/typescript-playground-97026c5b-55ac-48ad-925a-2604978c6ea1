@@ -23,7 +23,7 @@ function mouseMoved() {
     textSize(17);
     textAlign(CENTER, CENTER);
     fill("white");
-    let mousexnumber = Math.round(mouseX / 601 * 100) + 100;
+    let mousexnumber = Math.round(mouseX / 601 * 100);
     text(`${mouseX} of 601 = ${mousexnumber}%`, 70, 295);
 
     noFill();
