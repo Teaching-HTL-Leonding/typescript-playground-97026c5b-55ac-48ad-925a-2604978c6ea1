@@ -23,7 +23,7 @@ function mouseMoved() {
     textSize(17);
     textAlign(CENTER, CENTER);
     fill("white");
-    let mousexnumber = Math.round(mouseX / 601 * 100);
+    let mousexnumber = Math.round(mouseX / 601 * 100) + 100;
     text(`${mouseX} of 601 = ${mousexnumber}%`, 70, 295);
 
     noFill();
@@ -33,6 +33,7 @@ function mouseMoved() {
     let HEIGHT_OF_LINE1 = 0;
     let HEIGHT_OF_LINE2 = 5;
     let color1 = 0;
+    if(mouseX <= width || mouseX >= 0){
     for (let x = 0; x < 601; x++) {
         colorMode(HSB);
         stroke(color1, 100, 100);
@@ -41,10 +42,11 @@ function mouseMoved() {
             HEIGHT_OF_LINE1 += 10;
             line(10, HEIGHT_OF_LINE2, 0, HEIGHT_OF_LINE1);
             HEIGHT_OF_LINE2 += 10;
-            color1 = (color1 + 0.2) % 360;
+            color1 = (color1 + 0.23) % 360;
         }
         translate(10, 0);
         HEIGHT_OF_LINE1 = 0;
         HEIGHT_OF_LINE2 = 5;
+    }
     }
 }
