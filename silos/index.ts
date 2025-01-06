@@ -27,25 +27,16 @@ function setup() {
 
   // <<< Add your code here
 }
-
 function draw() {
   background("black");
 
   // <<< Add your code here
-  fill("white");
-  let siloheights = 0
-  let nmbrs = ""
-  for(let i = 0; i <= SILO_MAX; i ++){
-    for(let ix = 0; nmbrs.length <= INITIAL_FILL.length; ix ++){
-      switch(INITIAL_FILL[ix]){
-        case ",":        
-        ix + 1;
-        break;
-        default:
-        nmbrs += INITIAL_FILL[ix];
-      }
-    }
-    text(nmbrs, width / 4 , height * 3 / 4);
+  fill("yellow");
+  textAlign(CENTER, CENTER);
+  textSize(35);
+    for (let i = 0; i <= INITIAL_FILL.length; i++) {
+      let filllevels = INITIAL_FILL.split(",");
+      text(filllevels[i], width / 7 + 70 * i, height * 3 / 4);
   }
 }
 
