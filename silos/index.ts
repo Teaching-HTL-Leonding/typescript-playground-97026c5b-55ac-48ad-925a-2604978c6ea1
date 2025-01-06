@@ -36,13 +36,13 @@ function draw() {
   let siloheights = 0
   let nmbrs = ""
   for(let i = 0; i <= SILO_MAX; i ++){
-    for(let ix = 0; nmbrs.length <= INITIAL_FILL; ix ++){
+    for(let ix = 0; nmbrs.length <= INITIAL_FILL.length; ix ++){
       switch(INITIAL_FILL[ix]){
         case ",":        
         ix + 1;
         break;
         default:
-        nmbrs += INITIAL_FILL[ix]; 
+        nmbrs += INITIAL_FILL[ix];
       }
     }
     text(nmbrs, width / 4 , height * 3 / 4);
