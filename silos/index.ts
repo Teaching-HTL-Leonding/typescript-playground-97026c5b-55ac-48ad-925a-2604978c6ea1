@@ -34,8 +34,8 @@ function draw() {
   fill("yellow");
   textAlign(CENTER, CENTER);
   textSize(35);
-    for (let i = 0; i <= INITIAL_FILL.length; i++) {
-      let filllevels = INITIAL_FILL.split(",");
+      let filllevels = INITIAL_FILL.split(",")
+    for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
       text(filllevels[i], width / 7 + 70 * i, height * 3 / 4);
   }
 }
