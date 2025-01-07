@@ -24,7 +24,7 @@ const BUTTON_TOP = SILOS_TOP - BUTTON_GAP - BUTTON_SIZE; // Y-coordinate of the 
 
 function setup() {
   createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
-
+  
   // <<< Add your code here
 }
 function draw() {
@@ -34,26 +34,26 @@ function draw() {
   fill("yellow");
   textAlign(CENTER, CENTER);
   textSize(35);
-      let filllevels = INITIAL_FILL.split(",")
-    for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
-      text(filllevels[i], width / 7 + 70 * i, height * 7 / 8);
-      if(i < CRICITAL_FILL){
-        fill("green");
-      }else { fill("red");}
-      switch(i){
-        case 1: 
-        rect(SILO_GAP, SILO_HEIGHT + SILOS_TOP -parseInt(filllevels[0]) * (SILO_HEIGHT / 10), SILO_WIDTH,  -parseInt(filllevels[0]) * SILO_HEIGHT / 10); 
-      }
-      
+  let filllevels = INITIAL_FILL.split(",")
+  for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
+    text(filllevels[i], width / 7 + 70 * i, height * 7 / 8);
+    if (i < CRICITAL_FILL) {
+      fill("green");
+    } else { fill("red"); }
+    switch (i) {
+      case 1:
+        rect(SILO_GAP, SILO_HEIGHT + SILOS_TOP - parseInt(filllevels[0]) * (SILO_HEIGHT / 10), SILO_WIDTH, -parseInt(filllevels[0]) * SILO_HEIGHT / 10);
+    }
+
   }
-      noFill();
-      stroke("yellow");
-      rect(SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
-      rect(4 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
-      rect(7 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
-      rect(10 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
-      rect(13 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
-      rect(width - 3 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+  noFill();
+  stroke("yellow");
+  rect(SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+  rect(4 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+  rect(7 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+  rect(10 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+  rect(13 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+  rect(width - 3 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
 }
 
 function mouseClicked() {
