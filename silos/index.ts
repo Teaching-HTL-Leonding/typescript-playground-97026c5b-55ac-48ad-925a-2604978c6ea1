@@ -37,7 +37,20 @@ function draw() {
       let filllevels = INITIAL_FILL.split(",")
     for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
       text(filllevels[i], width / 7 + 70 * i, height * 3 / 4);
+      if(i <)
+      switch(i){
+        case 1:
+      }
+      
   }
+      noFill();
+      stroke("yellow");
+      rect(SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+      rect(4 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+      rect(7 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+      rect(10 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+      rect(13 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
+      rect(width - 3 * SILO_GAP, SILOS_TOP, SILO_WIDTH, SILO_HEIGHT);
 }
 
 function mouseClicked() {
