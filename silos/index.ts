@@ -34,6 +34,8 @@ function draw() {
   fill("yellow");
   let filllevels = INITIAL_FILL.split(",")
   for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
+
+    
     push();
     translate(SILO_WIDTH, SILOS_TOP + SILO_HEIGHT + SILO_WIDTH / 2);
     fill("yellow")
@@ -41,18 +43,24 @@ function draw() {
     textSize(35);
     text(filllevels[i], 75 * i, 0);
     pop();
+
+
     if (parseInt(filllevels[i]) < CRICITAL_FILL) {
       fill("green");
     } else { fill("red"); }
+
+
     push();
     translate(SILO_GAP, SILOS_TOP);
     rect(75 * i, SILO_HEIGHT - parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX, SILO_WIDTH, parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX);
     pop();
+
+
     push();
-  translate(SILO_GAP, SILOS_TOP);
-  noFill();
-  stroke("yellow");
-  rect(75 * i, 0, SILO_WIDTH, SILO_HEIGHT);
+    translate(SILO_GAP, SILOS_TOP);
+    noFill();
+    stroke("yellow");
+    rect(75 * i, 0, SILO_WIDTH, SILO_HEIGHT);
     pop();
 
   }
