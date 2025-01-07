@@ -49,18 +49,36 @@ function draw() {
       fill("green");
     } else { fill("red"); }
 
-
+  //Draw the filllevels
     push();
     translate(SILO_GAP, SILOS_TOP);
     rect(75 * i, SILO_HEIGHT - parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX, SILO_WIDTH, parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX);
     pop();
 
-
+    //Draw the Silos
     push();
     translate(SILO_GAP, SILOS_TOP);
     noFill();
     stroke("yellow");
     rect(75 * i, 0, SILO_WIDTH, SILO_HEIGHT);
+    pop();
+
+    //Draw the left buttons
+    push();
+    translate(SILO_GAP, BUTTON_TOP);
+    fill("yellow");
+    rect(75 * i, 0, BUTTON_SIZE, BUTTON_SIZE);
+    fill("black");
+    triangle(BUTTON_SIZE / 2 + 75 * i, 5, 5 + 75 * i, BUTTON_SIZE - 5, BUTTON_SIZE - 5 + 75 * i, BUTTON_SIZE - 5)
+    pop();
+
+    //draw the right buttons
+    push();
+    fill("yellow");
+    translate(SILO_GAP + 30, BUTTON_TOP);
+    rect(75 * i, 0, BUTTON_SIZE, BUTTON_SIZE);
+    fill("black");
+    triangle(5 + 75 * i, 5, BUTTON_SIZE / 2 + 75 * i, BUTTON_SIZE - 5, BUTTON_SIZE - 5 + 75 * i, 5);
     pop();
 
   }
