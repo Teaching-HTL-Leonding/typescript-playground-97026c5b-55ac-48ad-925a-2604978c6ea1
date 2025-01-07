@@ -36,10 +36,13 @@ function draw() {
   textSize(35);
       let filllevels = INITIAL_FILL.split(",")
     for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
-      text(filllevels[i], width / 7 + 70 * i, height * 3 / 4);
-      if(i <)
+      text(filllevels[i], width / 7 + 70 * i, height * 7 / 8);
+      if(i < CRICITAL_FILL){
+        fill("green");
+      }else { fill("red");}
       switch(i){
-        case 1:
+        case 1: 
+        rect(SILO_GAP, SILO_HEIGHT + SILOS_TOP -parseInt(filllevels[0]) * (SILO_HEIGHT / 10), SILO_WIDTH,  -parseInt(filllevels[0]) * SILO_HEIGHT / 10); 
       }
       
   }
