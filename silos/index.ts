@@ -26,6 +26,17 @@ const TRIANGLE_GAP = BUTTON_SIZE / 4; // Gap between each Triangle Tip and the r
 
 function setup() {
   createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+    let num = 0;
+  for (let i = 0; i < INITIAL_FILL.length; i++) {
+    if (INITIAL_FILL[i] === ",") {
+      silos.push(num);
+      num = 0;
+    } else {
+      num = num * 10 + parseInt(INITIAL_FILL[i].trim());
+    }
+  }
+
+  silos.push(num);
 
   // <<< Add your code here
 }
@@ -34,8 +45,8 @@ function draw() {
 
   // <<< Add your code here
   fill("yellow");
-  let filllevels = INITIAL_FILL.split(",")
-  for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
+  //let filllevels = INITIAL_FILL.split(",")
+  for (let i = 0; silos[i] <= SILO_MAX; i++) {
   let xcoordinate = i * (SILO_WIDTH + SILO_GAP);
 
     //Draw the filllevel numbers
@@ -44,18 +55,18 @@ function draw() {
     fill("yellow")
     textAlign(CENTER, CENTER);
     textSize(35);
-    text(filllevels[i], xcoordinate, 0);
+    text(silos[i], xcoordinate, 0);
     pop();
 
 
-    if (parseInt(filllevels[i]) < CRICITAL_FILL) {
+    if (silos[i] < CRICITAL_FILL) {
       fill("green");
     } else { fill("red"); }
 
     //Draw the filllevels 
     push();
     translate(SILO_GAP, SILOS_TOP);
-    rect(xcoordinate, SILO_HEIGHT - parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX, SILO_WIDTH, parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX);
+    rect(xcoordinate, SILO_HEIGHT - silos[i] * SILO_HEIGHT / SILO_MAX, SILO_WIDTH, silos[i] * SILO_HEIGHT / SILO_MAX);
     pop();
 
     //Draw the Silos
