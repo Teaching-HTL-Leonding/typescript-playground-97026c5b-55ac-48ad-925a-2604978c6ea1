@@ -20,6 +20,8 @@ const BUTTON_SIZE = 20; // Size of the buttons ("add" and "remove")
 const BUTTON_GAP = 15; // Gap between the bottom of the buttons and the top of the silos
 const BUTTON_TOP = SILOS_TOP - BUTTON_GAP - BUTTON_SIZE; // Y-coordinate of the top of the buttons
 
+
+const TRIANGLE_GAP = BUTTON_SIZE / 4; // Gap between each Triangle Tip and the rect 
 // <<< Add your arrays here
 
 function setup() {
@@ -34,6 +36,7 @@ function draw() {
   fill("yellow");
   let filllevels = INITIAL_FILL.split(",")
   for (let i = 0; parseInt(filllevels[i]) <= SILO_MAX; i++) {
+  let xcoordinate = i * (SILO_WIDTH + SILO_GAP);
 
     //Draw the filllevel numbers
     push();
@@ -41,7 +44,7 @@ function draw() {
     fill("yellow")
     textAlign(CENTER, CENTER);
     textSize(35);
-    text(filllevels[i], 75 * i, 0);
+    text(filllevels[i], xcoordinate, 0);
     pop();
 
 
@@ -52,7 +55,7 @@ function draw() {
     //Draw the filllevels 
     push();
     translate(SILO_GAP, SILOS_TOP);
-    rect(75 * i, SILO_HEIGHT - parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX, SILO_WIDTH, parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX);
+    rect(xcoordinate, SILO_HEIGHT - parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX, SILO_WIDTH, parseInt(filllevels[i]) * SILO_HEIGHT / SILO_MAX);
     pop();
 
     //Draw the Silos
@@ -61,25 +64,25 @@ function draw() {
     noFill();
     stroke("yellow");
     strokeWeight(2);
-    rect(75 * i, 0, SILO_WIDTH, SILO_HEIGHT);
+    rect(xcoordinate, 0, SILO_WIDTH, SILO_HEIGHT);
     pop();
 
     //Draw the left buttons
     push();
     translate(SILO_GAP, BUTTON_TOP);
     fill("yellow");
-    rect(75 * i, 0, BUTTON_SIZE, BUTTON_SIZE);
+    rect(xcoordinate, 0, BUTTON_SIZE, BUTTON_SIZE);
     fill("black");
-    triangle(BUTTON_SIZE / 2 + 75 * i, 5, 5 + 75 * i, BUTTON_SIZE - 5, BUTTON_SIZE - 5 + 75 * i, BUTTON_SIZE - 5)
+    triangle(BUTTON_SIZE / 2 + xcoordinate, TRIANGLE_GAP, TRIANGLE_GAP + xcoordinate, BUTTON_SIZE - TRIANGLE_GAP, BUTTON_SIZE - TRIANGLE_GAP + xcoordinate, BUTTON_SIZE - TRIANGLE_GAP);
     pop();
 
     //draw the right buttons
     push();
     fill("yellow");
-    translate(SILO_GAP + 30, BUTTON_TOP);
-    rect(75 * i, 0, BUTTON_SIZE, BUTTON_SIZE);
+    translate(SILO_GAP + SILO_GAP + TRIANGLE_GAP, BUTTON_TOP);
+    rect(xcoordinate, 0, BUTTON_SIZE, BUTTON_SIZE);
     fill("black");
-    triangle(5 + 75 * i, 5, BUTTON_SIZE / 2 + 75 * i, BUTTON_SIZE - 5, BUTTON_SIZE - 5 + 75 * i, 5);
+    triangle(TRIANGLE_GAP + xcoordinate, TRIANGLE_GAP, BUTTON_SIZE / 2 + xcoordinate, BUTTON_SIZE - TRIANGLE_GAP, BUTTON_SIZE - TRIANGLE_GAP + xcoordinate, TRIANGLE_GAP);
     pop();
 
   }
