@@ -46,7 +46,7 @@ function setup() {
 
     // Set random color
     lineColor = random(minColor, maxColor);
-    }
+    
 }
 
 function draw() {
@@ -61,24 +61,24 @@ function draw() {
     line(lineStartX[i], lineStartY[i], lineEndX[i], lineEndY[i]);
 
     // Move start and end point
-    lineStartX += lineStartDx;
-    lineStartY += lineStartDy;
-    lineEndX += lineEndDx;
-    lineEndY += lineEndDy;
+    lineStartX[i] += lineStartDx[i];
+    lineStartY[i] += lineStartDy[i];
+    lineEndX[i] += lineEndDx[i];
+    lineEndY[i] += lineEndDy[i];
 
     // Reverse direction when edge has been reached
-    if (lineStartX < 0 || lineStartX > width) {
-        lineStartDx = -lineStartDx;
+    if (lineStartX[i] < 0 || lineStartX[i] > width) {
+        lineStartDx[i] = -lineStartDx{i};
     }
-    if (lineStartY < 0 || lineStartY > height) {
-        lineStartDy = -lineStartDy;
+    if (lineStartY[i] < 0 || lineStartY[i] > height) {
+        lineStartDy[i] = -lineStartDy[i];
     }
 
-    if (lineEndX < 0 || lineEndX > width) {
-        lineEndDx = -lineEndDx;
+    if (lineEndX[i] < 0 || lineEndX[i] > width) {
+        lineEndDx[i] = -lineEndDx[i];
     }
-    if (lineEndY < 0 || lineEndY > height) {
-        lineEndDy = -lineEndDy;
+    if (lineEndY[i] < 0 || lineEndY[i] > height) {
+        lineEndDy[i] = -lineEndDy[i];
     }
 
     pop();
