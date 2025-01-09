@@ -27,6 +27,10 @@ let maxColor = 360;
 const plus = "+";
 const minus = "-";
 
+const BUTTON_XY = 5;
+const BUTTON_WIDTH = 50;
+const BUTTON_GAP = 10;
+
 function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
@@ -87,11 +91,19 @@ function draw() {
     }
     // draw the buttons
     fill("white");
-    rect(5, 5, 50, 50);
-    rect(60, 5, 50, 50);
+    rect(BUTTON_XY, BUTTON_XY, BUTTON_WIDTH, BUTTON_WIDTH);
+    rect(BUTTON_WIDTH + BUTTON_GAP, BUTTON_XY, BUTTON_WIDTH, BUTTON_WIDTH);
     fill("black");
     textAlign(CENTER, CENTER);
     textSize(35);
-    text(plus, 5 + 50 / 2, 5 + 50 / 2);
+    text(plus, BUTTON_XY + BUTTON_WIDTH / 2, BUTTON_XY + BUTTON_WIDTH / 2);
     text(minus, 65 + 50 / 2, 5 + 50 / 2);
+}
+
+function mouseClicked() {
+    if (mouseX >= BUTTON_XY && mouseX <= BUTTON_XY + BUTTON_WIDTH
+        && mouseY >= BUTTON_XY && mouseY <= BUTTON_XY + BUTTON_WIDTH) {
+            
+
+    }
 }
