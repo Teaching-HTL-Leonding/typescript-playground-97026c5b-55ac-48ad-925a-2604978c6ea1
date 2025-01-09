@@ -19,9 +19,6 @@ let lineStartDy: number[] = [];
 let lineEndDx: number[] = [];      // Movement of end point per frame in X and Y direction
 let lineEndDy: number[] = [];
 
-let colorrange: number[] = [];
-let minlines: number[] = [];
-
 // Upper bound of random hue value
 const plus = "+";
 const minus = "-";
