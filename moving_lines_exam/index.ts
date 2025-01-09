@@ -115,8 +115,19 @@ function mouseClicked() {
 
         lineColor.push(random(minColor, maxColor));
     }
-    if (mouseX >= BUTTON_WIDTH + BUTTON_GAP && mouseX <= BUTTON_WIDTH + BUTTON_GAP
+    if (mouseX >= BUTTON_WIDTH + BUTTON_GAP && mouseX <= BUTTON_WIDTH + BUTTON_GAP + BUTTON_WIDTH
         && mouseY >= BUTTON_XY && mouseY <= BUTTON_XY + BUTTON_WIDTH) {
 
+        startlines = startlines - 1;
+
+        lineStartX.splice(startlines, 1);
+        lineStartY.splice(startlines, 1);
+        lineEndX.splice(startlines, 1);
+        lineEndY.splice(startlines, 1);
+
+        lineStartDx.splice(startlines, 1);
+        lineStartDy.splice(startlines, 1);
+        lineEndDx.slice(startlines, 1);
+        lineEndDy.splice(startlines, 1);
     }
 }
