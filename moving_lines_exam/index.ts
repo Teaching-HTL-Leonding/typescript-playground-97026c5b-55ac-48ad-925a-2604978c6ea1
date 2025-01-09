@@ -1,4 +1,4 @@
-// Configuration for the number of lines, and the range of colors The format is:
+//Configuration for the number of lines, and the range of colors The format is:
 // <number of lines>;<min hue>-<max hue>
 //
 // "number of lines" is the number of lines to draw, can be between 1 and 30
@@ -20,7 +20,6 @@ let lineEndDx: number[] = [];      // Movement of end point per frame in X and Y
 let lineEndDy: number[] = [];
 
 
-
 let minColor = 0;               // Lower bound of random hue value
 let maxColor = 360;
 // Upper bound of random hue value
@@ -35,7 +34,6 @@ function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
     for (let i = 0; i < startlines; i++) {
-
 
         // Set random start and end position
         lineStartX.push(random(50, 450));
@@ -103,7 +101,22 @@ function draw() {
 function mouseClicked() {
     if (mouseX >= BUTTON_XY && mouseX <= BUTTON_XY + BUTTON_WIDTH
         && mouseY >= BUTTON_XY && mouseY <= BUTTON_XY + BUTTON_WIDTH) {
-            
+        startlines = startlines + 1;
+
+        lineStartX.push(random(50, 450));
+        lineStartY.push(random(50, 450));
+        lineEndX.push(random(50, 450));
+        lineEndY.push(random(50, 450));
+
+        lineStartDx.push(random(0, 5));
+        lineStartDy.push(random(0, 5));
+        lineEndDx.push(random(0, 5));
+        lineEndDy.push(random(0, 5));
+
+        lineColor.push(random(minColor, maxColor));
+    }
+    if (mouseX >= BUTTON_WIDTH + BUTTON_GAP && mouseX <= BUTTON_WIDTH + BUTTON_GAP
+        && mouseY >= BUTTON_XY && mouseY <= BUTTON_XY + BUTTON_WIDTH) {
 
     }
 }
