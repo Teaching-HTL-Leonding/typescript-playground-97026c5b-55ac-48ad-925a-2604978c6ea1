@@ -19,9 +19,9 @@ let lineStartDy: number[] = [];
 let lineEndDx: number[] = [];      // Movement of end point per frame in X and Y direction
 let lineEndDy: number[] = [];
 
+let colorrange: number[] = [];
+let minlines: number[] = [];
 
-let minColor = 0;               // Lower bound of random hue value
-let maxColor = 360;
 // Upper bound of random hue value
 const plus = "+";
 const minus = "-";
@@ -29,10 +29,25 @@ const minus = "-";
 const BUTTON_XY = 5;
 const BUTTON_WIDTH = 50;
 const BUTTON_GAP = 10;
+let mincolor = 0;
+let maxcolor = 0;
 
 function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
+    let num = 0;
+    for (let i = 0; i < CONFIGURATION.length; i++) {
+        if (CONFIGURATION[i] === ";") {
+            startlines = num;
+            num = 0;
+        } else if (CONFIGURATION[i] === "-") {
+            mincolor = num
+            num = 0;
+        } else {
+            num = num * 10 + parseInt(CONFIGURATION[i]);
+        }
+    }
+    maxcolor = num;
     for (let i = 0; i < startlines; i++) {
 
         // Set random start and end position
@@ -48,7 +63,7 @@ function setup() {
         lineEndDy.push(random(0, 5));
 
         // Set random color
-        lineColor.push(random(minColor, maxColor));
+        lineColor.push(random(mincolor, maxcolor));
     }
 
 }
@@ -95,7 +110,7 @@ function draw() {
     textAlign(CENTER, CENTER);
     textSize(35);
     text(plus, BUTTON_XY + BUTTON_WIDTH / 2, BUTTON_XY + BUTTON_WIDTH / 2);
-    text(minus, 65 + 50 / 2, 5 + 50 / 2);
+    text(minus, BUTTON_GAP + BUTTON_WIDTH + BUTTON_WIDTH / 2, BUTTON_XY + BUTTON_WIDTH / 2);
 }
 
 function mouseClicked() {
@@ -113,10 +128,10 @@ function mouseClicked() {
         lineEndDx.push(random(0, 5));
         lineEndDy.push(random(0, 5));
 
-        lineColor.push(random(minColor, maxColor));
+        lineColor.push(random(mincolor, maxcolor));
     }
     if (mouseX >= BUTTON_WIDTH + BUTTON_GAP && mouseX <= BUTTON_WIDTH + BUTTON_GAP + BUTTON_WIDTH
-        && mouseY >= BUTTON_XY && mouseY <= BUTTON_XY + BUTTON_WIDTH) {
+        && mouseY >= BUTTON_XY && mouseY <= BUTTON_XY + BUTTON_WIDTH && startlines > 1) {
 
         startlines = startlines - 1;
 
@@ -131,3 +146,4 @@ function mouseClicked() {
         lineEndDy.splice(startlines, 1);
     }
 }
+
