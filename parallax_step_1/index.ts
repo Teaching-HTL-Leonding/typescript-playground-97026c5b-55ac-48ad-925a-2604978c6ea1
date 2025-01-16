@@ -27,6 +27,8 @@ function draw() {
     }else if(keyIsDown(37)){
         scrollposition += 5;
     }
+
+    scale(0.5, 0.5);
     
     let step = scrollposition / backgroundimages.length;
     
