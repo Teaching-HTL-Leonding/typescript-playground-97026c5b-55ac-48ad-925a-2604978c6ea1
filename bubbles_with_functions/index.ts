@@ -17,9 +17,9 @@ function setup() {
 
   addRandomCircle();
   circle_interval = setInterval(addRandomCircle, waiting_time);
-  
 
-  
+
+
 
   // <<< Add code here
 }
@@ -28,19 +28,20 @@ function draw() {
   background("black");
 
   // <<< Add code here
-  for(let i = 0; i < circles_x.length; i ++){
+  for (let i = 0; i < circles_x.length; i++) {
     circle(circles_x[i], circles_y[i], circles_diameter[i]);
-    
+
   }
 }
 
 // <<< Add functions here
-function addRandomCircle(){
+function addRandomCircle() {
   circles_x.push(random(0, width));
   circles_y.push(random(0, height));
   circles_diameter.push(random(10, 51));
 }
 
-function isInside(){
-  
+function isInside(X: number, y: number, circle_Index: boolean) {
+  let x = 
+
 }
