@@ -14,6 +14,7 @@ function setup() {
   drawAxes();
   drawYLabels();
   drawXLabels();
+  drawTemperatures(AVG_TEMP_JOHANNESBURG);
 
   // <<< Call the functions in the following order:
   // 1. Draw temperatures (gets AVG_TEMP_LINZ or AVG_TEMP_JOHANNESBURG as parameter)
@@ -55,13 +56,13 @@ function drawXLabels() {
   strokeWeight(2);
   line(x, 220, x, 230);
 
-    noStroke();
+    push()
     textAlign(CENTER, CENTER);
     textSize(10);
     push();
     translate(50, 5);
     text(MONTHS[i], 15 + 30 * i, 210);
-    pop();
+    pop()
 
 
  }
@@ -69,12 +70,13 @@ function drawXLabels() {
 
 function drawTemperatures(temperatures: number[]) {
   // <<< Add code to draw the temperatures here
-  for(let i = 0; i <= AVG_TEMP_JOHANNESBURG.length; i ++){
+  for(let i = 0; i < temperatures.length; i ++){
+    noStroke();
     fill("yellow");
-    let temp = 1;
-    translate(5, 0);
     push();
-    translate(30 * i, 0);
-    rect(0, AVG_TEMP_JOHANNESBURG[i], 20, AVG_TEMP_JOHANNESBURG[i]);
+    translate(55, - 5);
+    let xcoordinate = i * 30;
+    rect(xcoordinate, 225 -  AVG_TEMP_JOHANNESBURG[i] * 5, 20, AVG_TEMP_JOHANNESBURG[i] * 5);
+    pop();
   }
 }
