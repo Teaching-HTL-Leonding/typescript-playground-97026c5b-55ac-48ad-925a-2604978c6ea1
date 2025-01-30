@@ -75,6 +75,6 @@ function drawTemperatures(temperatures: number[]) {
     translate(5, 0);
     push();
     translate(30 * i, 0);
-    rect()
+    rect(0, AVG_TEMP_JOHANNESBURG[i], 20, AVG_TEMP_JOHANNESBURG[i]);
   }
 }
