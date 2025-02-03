@@ -5,16 +5,9 @@ const AVG_TEMP_LINZ: number[] = [
 const AVG_TEMP_JOHANNESBURG: number[] = [
   20, 20, 18, 15, 12, 9, 9, 12, 16, 18, 18, 19,
 ];
-const MONTHS: string[] = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
-
 
 function setup() {
   createCanvas(460, 300);
-
-  drawAxes();
-  drawYLabels();
-  drawTemperatures(AVG_TEMP_JOHANNESBURG);
-  drawXLabels();
 
   // <<< Call the functions in the following order:
   // 1. Draw temperatures (gets AVG_TEMP_LINZ or AVG_TEMP_JOHANNESBURG as parameter)
@@ -25,59 +18,16 @@ function setup() {
 
 function drawAxes() {
   // <<< Add code to draw X and Y axes here
-  stroke("black");
-  strokeWeight(2);
-  line(50, 50, 50, 250);
-  line(50, 225, 410, 225);
 }
 
 function drawYLabels() {
   // <<< Add code to draw labels for the Y axis here
-  for(let i = - 5; i <= 35; i += 5){
-    let y = 225 - i * 5;
-
-
-    stroke("black");
-    strokeWeight(2);
-    line(45, y , 55, y);
-    noStroke();
-    textAlign(RIGHT, CENTER);
-    textSize(10);
-    text(i, 40, y);
-  }
 }
 
 function drawXLabels() {
   // <<< Add code to draw labels for the X axis here
- for( let i = 0;  i <= MONTHS.length; i ++){
-  let x = 410 - 30 * i;
-
-  stroke("black");
-  strokeWeight(2);
-  line(x, 220, x, 230);
-    push()
-    textAlign(CENTER, CENTER);
-    textSize(10);
-    push();
-    noStroke();
-    fill("black");
-    translate(50, 5);
-    text(MONTHS[i], 15 + 30 * i, 210);
-    pop()
-
-
- }
 }
 
 function drawTemperatures(temperatures: number[]) {
   // <<< Add code to draw the temperatures here
-  for(let i = 0; i < temperatures.length; i ++){
-    noStroke();
-    fill("yellow");
-    push();
-    translate(55, 0);
-    let xcoordinate = i * 30;
-    rect(xcoordinate, 225 -  AVG_TEMP_JOHANNESBURG[i] * 5, 20, AVG_TEMP_JOHANNESBURG[i] * 5);
-    pop();
-  }
 }
