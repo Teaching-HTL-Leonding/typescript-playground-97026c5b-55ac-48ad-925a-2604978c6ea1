@@ -32,6 +32,12 @@ function draw() {
     circle(circles_x[i], circles_y[i], circles_diameter[i]);
 
   }
+  noStroke();
+  textSize(30);
+  textAlign(LEFT, CENTER);
+  fill("white");
+  text(`Points: ${points}`, 10, 30);
+
 }
 
 // <<< Add functions here
@@ -41,7 +47,20 @@ function addRandomCircle() {
   circles_diameter.push(random(10, 51));
 }
 
-function isInside(X: number, y: number, circle_Index: boolean) {
-  let x = 
+function isInside(x: number, y: number, circle_index: number): boolean {
+  const dx = x - circles_x[circle_index];
+  const dy = y - circles_y[circle_index];
+  const distance = Math.sqrt(dx * dx + dy * dy);
+  return distance < circles_diameter[circle_index] / 2;
+}
 
+function mouseClicked() {
+  for (let i = 0; i < circles_x.length; i++) {
+    if (isInside(mouseX, mouseY, i)) {
+      circles_x.splice(i, 1);
+      circles_y.splice(i, 1);
+      circles_diameter.splice(i, 1);
+      points += 1;
+    }
+  }
 }
