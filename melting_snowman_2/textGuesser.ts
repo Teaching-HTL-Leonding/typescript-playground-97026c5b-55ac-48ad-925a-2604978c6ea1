@@ -12,17 +12,17 @@
  */
 function getInitialCurrentWord(wordToGuess: string): string {
     // <<< Add code here
-    let unvisibleword = "";
+    let invisibleword = "";
     for(let i = 0; i < wordToGuess.length; i ++){
         if(wordToGuess[i] === " "){
-            unvisibleword += " ";
-        } else { unvisibleword += "_";}
+            invisibleword += " ";
+        } else { invisibleword += "_";}
         fill("blue");
         textSize(25);
-        text(unvisibleword, width * 3 / 4, height / 2);
+        text(invisibleword, width * 3 / 4, height / 2);
     }
 
- return unvisibleword; // Placeholder, remove this line once you added your code
+ return invisibleword; // Placeholder, remove this line once you added your code
 }
 
 /**
