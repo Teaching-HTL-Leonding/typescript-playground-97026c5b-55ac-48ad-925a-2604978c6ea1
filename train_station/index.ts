@@ -78,6 +78,8 @@ function getWagonIndex(abbreviationWaggon: string): number {
     }
 }
 
-function parseTrain(){
+function parseTrain(trainnnn: string){
+    const result: p5.Image[] = [];
+     
 
 }
