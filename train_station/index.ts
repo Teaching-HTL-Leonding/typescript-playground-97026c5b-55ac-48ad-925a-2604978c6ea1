@@ -76,10 +76,21 @@ function getWagonIndex(abbreviationWaggon: string): number {
             return i;
         }
     }
+
+    return -1;
 }
 
-function parseTrain(trainnnn: string){
+function parseTrain(trainnnn: string): p5.Image[]{
     const result: p5.Image[] = [];
+
+
+    for(let i = 0; i < trainnnn.length; i ++){
+        if(trainnnn[i] === ","){
+            result.push(train[getWagonIndex]);
+            
+        }
+    }
+
      
 
 }
