@@ -176,6 +176,12 @@ function decodeCCard(cardShortcode: string): string {
         break;
         case "J": ranknames = "Jack";
         break;
+        case "Q": ranknames = "Queen";
+        break;
+        case "K": ranknames = "King";
+        break;
+        case "A": ranknames = "Ace";
+        break;
     }
     return ""; // <<< Remove this line and implement the function
 }
