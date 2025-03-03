@@ -17,7 +17,7 @@ function setup() {
 
     let array = [1, 2, 30, 4, 5];
     index = findIndexInArray(array, 30);
-    result += `findIndexInArray 1: ${index} ${index === 2 ? "✅" : "❌"}\n`;
+    result += `findIndexInArray 1: ${index} ${index === 2 ? "✅" : "❌"}\n`
 
     index = findIndexInArray(array, 31);
     result += `findIndexInArray 2: ${index} ${index === -1 ? "✅" : "❌"}\n`;
