@@ -136,6 +136,18 @@ function findIndexInArray(array: number[], number: number): number {
 * * A: Ace
 */
 function decodeCCard(cardShortcode: string): string {
+    let suits = cardShortcode[0];
+    let ranks = cardShortcode[1];
+
+    let names: string;
+
+    switch(suits){
+        case "H": names = "Hearts";
+        break;
+        case "C": names = "Spades";
+        break;
+        case "D":
+    }
     return ""; // <<< Remove this line and implement the function
 }
 
