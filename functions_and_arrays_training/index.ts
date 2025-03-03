@@ -75,6 +75,27 @@ function getSum(numbersString: string): number {
 * @returns The start index of the number, -1 if the number is not found
 */
 function getIndexOf(numbersString: string, number: number): number {
+    let temp: string[] = [];
+    let buffer = "";
+    let currentIndex: number;     
+
+    for(let i = 0; i < numbersString.length; i ++){
+        if(numbersString[i] === ","){
+           temp.push(buffer);
+           buffer = "";           
+        } else {buffer += numbersString[i]}
+    }
+        temp.push(buffer);
+
+        for(let i = 0; i < temp.length; i ++){
+            if(temp[i] === number.toString()){
+                return currentIndex;
+            } 
+            currentIndex = currentIndex + temp[i].length + 1;
+
+        }
+        console.log(currentIndex)
+    
     return -1; // <<< Remove this line and implement the function
 }
 
