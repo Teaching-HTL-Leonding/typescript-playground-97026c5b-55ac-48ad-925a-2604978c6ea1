@@ -139,14 +139,43 @@ function decodeCCard(cardShortcode: string): string {
     let suits = cardShortcode[0];
     let ranks = cardShortcode[1];
 
-    let names: string;
+    let suitnames: string;
+    let ranknames: string;
 
     switch(suits){
-        case "H": names = "Hearts";
+        case "H": suitnames = "Hearts";
         break;
-        case "C": names = "Spades";
+        case "s": suitnames = "Spades";
         break;
-        case "D":
+        case "D": suitnames = "Diamonds";
+        break;
+        case "C": suitnames = "Clubs";
+        break;
+        default: suitnames = "Unknown";
+    }
+    switch(ranks){
+        case "1": ranknames = "1";
+        break;
+        case "2": ranknames = "2";
+        break;
+        case "3": ranknames = "3";
+        break;
+        case "4": ranknames = "4";
+        break;
+        case "5": ranknames = "5";
+        break;
+        case "6": ranknames = "6";
+        break;
+        case "7": ranknames = "7";
+        break;
+        case "8": ranknames = "8";
+        break;
+        case "9": ranknames = "9";
+        break;
+        case "T": ranknames = "10";
+        break;
+        case "J": ranknames = "Jack";
+        break;
     }
     return ""; // <<< Remove this line and implement the function
 }
