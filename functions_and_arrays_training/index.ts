@@ -54,15 +54,15 @@ function getSum(numbersString: string): number {
     let numberr = 0;
     let buffer = "";
 
-    for(let i = 0; i < numbersString.length; i ++){
-        if(numbersString[i] === ","){
+    for (let i = 0; i < numbersString.length; i++) {
+        if (numbersString[i] === ",") {
             numberr += parseInt(buffer);
             buffer = "";
-        }else {
+        } else {
             buffer += parseInt(numbersString[i]);
         }
     }
-    if(numbersString){
+    if (numbersString) {
         numberr += parseInt(buffer);
     }
     return numberr; // <<< Remove this line and implement the function
@@ -77,25 +77,25 @@ function getSum(numbersString: string): number {
 function getIndexOf(numbersString: string, number: number): number {
     let temp: string[] = [];
     let buffer = "";
-    let currentIndex = 0;   
+    let currentIndex = 0;
 
-    for(let i = 0; i < numbersString.length; i ++){
-        if(numbersString[i] === ","){
-           temp.push(buffer);
-           buffer = "";           
-        } else {buffer += numbersString[i]}
+    for (let i = 0; i < numbersString.length; i++) {
+        if (numbersString[i] === ",") {
+            temp.push(buffer);
+            buffer = "";
+        } else { buffer += numbersString[i] }
     }
-        temp.push(buffer);
+    temp.push(buffer);
 
-        for(let i = 0; i < temp.length; i ++){
-            if(temp[i] === number.toString()){
-                return currentIndex;
-            } 
-            currentIndex = currentIndex + temp[i].length + 1;
-
+    for (let i = 0; i < temp.length; i++) {
+        if (temp[i] === number.toString()) {
+            return currentIndex;
         }
-        console.log(currentIndex)
-    
+        currentIndex = currentIndex + temp[i].length + 1;
+
+    }
+    console.log(currentIndex)
+
     return -1; // <<< Remove this line and implement the function
 }
 
@@ -106,8 +106,8 @@ function getIndexOf(numbersString: string, number: number): number {
 * @returns The index of the number, -1 if the number is not found
 */
 function findIndexInArray(array: number[], number: number): number {
-    for(let i = 0; i < array.length; i ++){
-        if(array[i]=== number){
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === number) {
             return i;
         }
     }
@@ -142,46 +142,46 @@ function decodeCCard(cardShortcode: string): string {
     let suitnames: string;
     let ranknames: string;
 
-    switch(suits){
+    switch (suits) {
         case "H": suitnames = "Hearts";
-        break;
+            break;
         case "S": suitnames = "Spades";
-        break;
+            break;
         case "D": suitnames = "Diamonds";
-        break;
+            break;
         case "C": suitnames = "Clubs";
-        break;
+            break;
         default: suitnames = "Unknown";
     }
-    switch(ranks){
+    switch (ranks) {
         case "1": ranknames = "1";
-        break;
+            break;
         case "2": ranknames = "2";
-        break;
+            break;
         case "3": ranknames = "3";
-        break;
+            break;
         case "4": ranknames = "4";
-        break;
+            break;
         case "5": ranknames = "5";
-        break;
+            break;
         case "6": ranknames = "6";
-        break;
+            break;
         case "7": ranknames = "7";
-        break;
+            break;
         case "8": ranknames = "8";
-        break;
+            break;
         case "9": ranknames = "9";
-        break;
+            break;
         case "T": ranknames = "10";
-        break;
+            break;
         case "J": ranknames = "Jack";
-        break;
+            break;
         case "Q": ranknames = "Queen";
-        break;
+            break;
         case "K": ranknames = "King";
-        break;
+            break;
         case "A": ranknames = "Ace";
-        break;
+            break;
         default: ranknames = "Unknown"
     }
     return `${ranknames} of ${suitnames}`; // <<< Remove this line and implement the function
@@ -196,14 +196,14 @@ function findAllEvenNumbers(numberString: string): number[] {
     let evenNumbers: number[] = [];
     let currentnumber = "";
 
-    for(let i = 0; i < numberString.length; i ++){
-        if(numberString[i] === ","){
+    for (let i = 0; i < numberString.length; i++) {
+        if (numberString[i] === ",") {
             let xy = parseInt(currentnumber);
-            if(xy % 2 === 0){
+            if (xy % 2 === 0) {
                 evenNumbers.push(xy);
             }
             currentnumber = "";
-        }else {
+        } else {
             currentnumber += numberString[i];
         }
     }
