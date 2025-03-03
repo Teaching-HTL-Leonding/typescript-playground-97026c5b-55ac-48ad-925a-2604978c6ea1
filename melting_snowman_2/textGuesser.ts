@@ -13,16 +13,15 @@
 function getInitialCurrentWord(wordToGuess: string): string {
     // <<< Add code here
     let invisibleword = "";
-    for(let i = 0; i < wordToGuess.length; i ++){
-        if(wordToGuess[i] === " "){
+
+    for (let i = 0; i < wordToGuess.length; i++) {
+        if (wordToGuess[i] === " ") {
             invisibleword += " ";
-        } else { invisibleword += "_";}
-        fill("blue");
-        textSize(25);
-        text(invisibleword, width * 3 / 4, height / 2);
+        } else { invisibleword += "_"; }
+
     }
 
- return invisibleword; // Placeholder, remove this line once you added your code
+    return invisibleword; // Placeholder, remove this line once you added your code
 }
 
 /**
@@ -40,8 +39,17 @@ function getInitialCurrentWord(wordToGuess: string): string {
  */
 function guessKey(key: string, wordToGuess: string, currentWordStatus: string): string {
     // <<< Add code here
+    let result = "";
 
-    return ""; // Placeholder, remove this line once you added your code
+    for (let i = 0; i < wordToGuess.length; i++) {
+        if (wordToGuess[i] === key) {
+            result += wordToGuess[i];
+        } else {
+            result += currentWordStatus[i];
+        }
+    }
+
+    return result; // Placeholder, remove this line once you added your code
 }
 
 /**
@@ -60,4 +68,22 @@ function guessKey(key: string, wordToGuess: string, currentWordStatus: string): 
  */
 function drawResult(win: boolean, wrongGuesses: number) {
     // <<< Add code here
+    fill("green");
+    textAlign(CENTER, CENTER);
+    textSize(35);
+
+    if (!win) {
+        fill("red");
+        text("Game over!", width / 2, height / 2);
+    } else if (wrongGuesses === 0) {
+
+        text("no wrong guesses", width / 2, height / 2);
+    } else if (wrongGuesses === 1) {
+        text("one wrong guess", width / 2, height / 2);
+
+    } else {
+        text(`${wrongGuesses} wrong guesses`, width / 2, height / 2);
+    }
+
+
 }
