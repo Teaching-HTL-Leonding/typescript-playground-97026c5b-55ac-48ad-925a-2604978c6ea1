@@ -145,7 +145,7 @@ function decodeCCard(cardShortcode: string): string {
     switch(suits){
         case "H": suitnames = "Hearts";
         break;
-        case "s": suitnames = "Spades";
+        case "S": suitnames = "Spades";
         break;
         case "D": suitnames = "Diamonds";
         break;
@@ -182,8 +182,9 @@ function decodeCCard(cardShortcode: string): string {
         break;
         case "A": ranknames = "Ace";
         break;
+        default: ranknames = "Unknown"
     }
-    return ""; // <<< Remove this line and implement the function
+    return `${ranknames} of ${suitnames}`; // <<< Remove this line and implement the function
 }
 
 /**
