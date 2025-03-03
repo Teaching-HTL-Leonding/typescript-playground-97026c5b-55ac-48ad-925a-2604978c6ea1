@@ -77,7 +77,7 @@ function getSum(numbersString: string): number {
 function getIndexOf(numbersString: string, number: number): number {
     let temp: string[] = [];
     let buffer = "";
-    let currentIndex: number;     
+    let currentIndex = 0;   
 
     for(let i = 0; i < numbersString.length; i ++){
         if(numbersString[i] === ","){
