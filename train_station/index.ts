@@ -28,12 +28,12 @@ function setup() {
     railroad = loadImage(`${BASE_URL}/railroad-straight.png`);
 
     for (let i = 0; i < imageUrls.length; i++) {
-    trainCars.push(loadImage(`${BASE_URL}/${imageUrls[i]}`));
+        trainCars.push(loadImage(`${BASE_URL}/${imageUrls[i]}`));
     }
 
     train = parseTrain(TRAIN);
 
-   // <<< Add code to load all images (see imageUrls in wagons.ts).
+    // <<< Add code to load all images (see imageUrls in wagons.ts).
     //     Add the images to the trainCars array. After loading all image,
     //     the length of the trainCars array must be equal to the length of imageUrls.
 
@@ -49,13 +49,18 @@ function draw() {
     translate(850, -100);
 
     // <<< Change this code accordingly for ADVANCED requirements
+    for (const track of trains) {
+        for (let i = 0; i < 5; i++) {
+            drawRailroad(i);
+        }
 
-    for (let i = 0; i < 5; i++) {
-        drawRailroad(i);
-    }
+        let ix = 0;
+        for (const wagon of track) {
+            drawTrainWagon(wagon, ix);
+            ix++;
+        }
 
-    for (let ix = 0; ix < train.length; ix++) {
-        drawTrainWagon(train[ix], ix);
+        translate(125, 100);
     }
 }
 
@@ -85,9 +90,9 @@ function parseTrain(trainnnn: string): p5.Image[] {
     }
     result.push(trainCars[getWagonIndex(buffer)]);
 
-   // console.log(result[0])
+    // console.log(result[0])
     return result.reverse();
-} 
+}
 
 function getWagonIndex(abbreviationWaggon: string): number {
     for (let i = 0; i < abbreviations.length; i++) {
@@ -97,4 +102,20 @@ function getWagonIndex(abbreviationWaggon: string): number {
     }
 
     return -1;
+}
+
+function parseTracks(trackstring: string): p5.Image[][] {
+    const result: p5.Image[][] = [];
+    let track = "";
+
+    for (let i = 0; i < trackstring.length; i++) {
+        if (trackstring[i] === ";") {
+            result.push(parseTrain(track));
+            track = "";
+        } else {track += trackstring[i];}
+    }
+    result.push(parseTrain(track));
+
+    return result;
+
 }
