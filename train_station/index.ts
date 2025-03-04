@@ -28,13 +28,10 @@ function setup() {
     railroad = loadImage(`${BASE_URL}/railroad-straight.png`);
 
     for (let i = 0; i < imageUrls.length; i++) {
-        train.push(loadImage(`${BASE_URL}${imageUrls[i]}`));
+    trainCars.push(loadImage(`${BASE_URL}/${imageUrls[i]}`));
     }
 
-    for (let i = 0; i < imageUrls.length; i++) {
-    trainCars.push(loadImage(`${BASE_URL}${imageUrls[i]}`));
-    }
-
+    train = parseTrain(TRAIN);
 
    // <<< Add code to load all images (see imageUrls in wagons.ts).
     //     Add the images to the trainCars array. After loading all image,
@@ -75,15 +72,6 @@ function drawTrainWagon(wagon: p5.Image, ix: number) {
     image(wagon, -WAGON_WIDTH * ix, WAGON_HEIGHT * ix, wagon.width, wagon.height);
 }
 
-function getWagonIndex(abbreviationWaggon: string): number {
-    for (let i = 0; i < abbreviations.length; i++) {
-        if (abbreviationWaggon === abbreviations[i]) {
-            return i;
-        }
-    }
-
-    return -1;
-}
 
 function parseTrain(trainnnn: string): p5.Image[] {
     const result: p5.Image[] = [];
@@ -97,12 +85,16 @@ function parseTrain(trainnnn: string): p5.Image[] {
     }
     result.push(trainCars[getWagonIndex(buffer)]);
 
-    console.log(result[0])
-    return result;
+   // console.log(result[0])
+    return result.reverse();
+} 
 
+function getWagonIndex(abbreviationWaggon: string): number {
+    for (let i = 0; i < abbreviations.length; i++) {
+        if (abbreviationWaggon === abbreviations[i]) {
+            return i;
+        }
+    }
 
-
-
-
-
+    return -1;
 }
