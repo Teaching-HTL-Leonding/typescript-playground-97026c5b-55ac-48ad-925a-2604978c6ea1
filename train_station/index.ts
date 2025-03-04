@@ -48,7 +48,6 @@ function draw() {
 
     translate(850, -100);
 
-    // <<< Change this code accordingly for ADVANCED requirements
     for (const track of trains) {
         for (let i = 0; i < 5; i++) {
             drawRailroad(i);
