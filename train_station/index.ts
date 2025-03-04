@@ -31,7 +31,9 @@ function setup() {
         trainCars.push(loadImage(`${BASE_URL}/${imageUrls[i]}`));
     }
 
-    train = parseTrain(TRAIN);
+
+
+    trains = parseTracks(TRACKS);
 
     // <<< Add code to load all images (see imageUrls in wagons.ts).
     //     Add the images to the trainCars array. After loading all image,
