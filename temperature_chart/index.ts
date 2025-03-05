@@ -17,6 +17,7 @@ function setup() {
   // 3. Draw Y labels
   // 4. Draw X labels
   drawAxes();
+  drawTemperatures(AVG_TEMP_LINZ);
   drawXLabels();
   drawYLabels();
   
@@ -24,6 +25,7 @@ function setup() {
 
 function drawAxes() {
   // <<< Add code to draw X and Y axes here
+  fill("black");
   strokeWeight(3);
   line(30, 30, 30, 190);
 
@@ -35,6 +37,7 @@ function drawAxes() {
 function drawYLabels() {
   // <<< Add code to draw labels for the Y axis here
   for(let i = 0; i < 9; i ++){
+    fill("black");
     let ytemp = 35;
   
     push();
@@ -50,7 +53,9 @@ function drawYLabels() {
 function drawXLabels() {
   // <<< Add code to draw labels for the X axis here
 
+
     for(let i = 0; i <= MONTHS.length; i ++){
+      fill("black");
       push();
       translate( 30 + 30 * i, 170);
       line(0, -7, 0, 7);
@@ -65,4 +70,16 @@ function drawXLabels() {
 
 function drawTemperatures(temperatures: number[]) {
   // <<< Add code to draw the temperatures here
+  push();
+    noStroke();
+    fill("gold");
+    for (let i = 0; i < temperatures.length; i++) {
+      let x = 30 + i * 30;
+      let y = 170 - temperatures[i] * 5;
+      rect(x + 5, y, 20, temperatures[i] * 5);
+    }
+
+    
+
+ 
 }
