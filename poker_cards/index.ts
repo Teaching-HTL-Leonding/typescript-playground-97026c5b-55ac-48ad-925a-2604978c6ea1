@@ -187,7 +187,6 @@ function getHighestCard(hand: string[]): string {
 
 
     }
-    console.log(highestCard)
 
     return getCardDescription(`${hand[index]}`);
 }
