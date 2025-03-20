@@ -5,8 +5,13 @@
 * The game highlights a vertical solution word that is formed from a specific column.
 * Players win when they've guessed all letters in the solution word.
 */
-const cellwidth = 50; 
-const cellheight = 50;
+const cellwidth = 35; 
+const cellheight = 35;
+
+let animals: string[] = [];
+let startpoints: number[] = [];
+let descriptions: string[] = [];
+
 
 // Raw input data in format: animalName,startPosition,hint
 const crossword = `krebs,0,Schalentier  
@@ -36,6 +41,7 @@ function setup() {
     parsedcrossword();
     drawcrossword();
 
+
 }
 let puzzle: string[][] = [];
 
@@ -43,27 +49,32 @@ function parsedcrossword(){
     for(const line of crossword.split("\n")){
         const chars = line.split(",");
         puzzle.push(chars);
+
     }
-    console.log(puzzle)
+
+    for(let i = 0; i < puzzle.length; i ++){
+        animals.push(puzzle[i][0]);
+        startpoints.push(parseInt(puzzle[i][1]));
+        descriptions.push(puzzle[i][2])
+    }
+
 }
 
 function drawcrossword(){
-    for(let i = 0; i < puzzle.length; i ++){
-        text(puzzle[i][2], 350, i * cellheight + 50);        
+    for(let i = 0; i < descriptions.length; i ++){
+        text(descriptions[i], 500, i * cellheight + 30);        
     }
     
-    for(let i = 0; i < puzzle.length; i ++){
-        push()
-        translate(50, 0);
-        pop();
+    for(let i = 0; i < startpoints.length; i ++){
         push();
-        translate(parseInt(puzzle[i][1]) * cellwidth, i * cellheight + 50);
-        pop();
-        fill("black");
-        rect(0, 0, cellwidth, cellheight);
-         
+        translate(200, 0);
+        translate(startpoints[i] * cellwidth, i * cellheight + 5);
+        rect(0,0, cellwidth, cellheight);
+        pop(); 
+    for(let i = 0; i < animals[i].length; i ++){
+         const startx = 
 
-
+    }
     }
 
 }
