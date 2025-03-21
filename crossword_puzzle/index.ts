@@ -5,7 +5,7 @@
 * The game highlights a vertical solution word that is formed from a specific column.
 * Players win when they've guessed all letters in the solution word.
 */
-const cellwidth = 35; 
+const cellwidth = 35;
 const cellheight = 35;
 
 let animals: string[] = [];
@@ -45,14 +45,14 @@ function setup() {
 }
 let puzzle: string[][] = [];
 
-function parsedcrossword(){
-    for(const line of crossword.split("\n")){
+function parsedcrossword() {
+    for (const line of crossword.split("\n")) {
         const chars = line.split(",");
         puzzle.push(chars);
 
     }
 
-    for(let i = 0; i < puzzle.length; i ++){
+    for (let i = 0; i < puzzle.length; i++) {
         animals.push(puzzle[i][0]);
         startpoints.push(parseInt(puzzle[i][1]));
         descriptions.push(puzzle[i][2])
@@ -60,16 +60,17 @@ function parsedcrossword(){
 
 }
 
-function drawcrossword(){
+function drawcrossword() {
     fill("yellow");
     rect(4 * cellwidth, 0, cellwidth, animals.length * cellheight)
+
+    for (let i = 0; i < descriptions.length; i++) {
+        fill("black");
+        text(descriptions[i], 500, i * cellheight + 25);
+    }
     noFill();
 
-    for(let i = 0; i < descriptions.length; i ++){
-        text(descriptions[i], 500, i * cellheight + 25);        
-    }
-    
-        translate(4 * cellwidth, 0);
+    translate(4 * cellwidth, 0);
     for (let i = 0; i < animals.length; i++) {
         push();
         for (let j = 0; j < animals[i].length; j++) {
