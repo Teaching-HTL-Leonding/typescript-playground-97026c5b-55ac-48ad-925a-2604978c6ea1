@@ -61,20 +61,29 @@ function parsedcrossword(){
 }
 
 function drawcrossword(){
+    fill("yellow");
+    rect(4 * cellwidth, 0, cellwidth, animals.length * cellheight)
+    noFill();
+
     for(let i = 0; i < descriptions.length; i ++){
-        text(descriptions[i], 500, i * cellheight + 30);        
+        text(descriptions[i], 500, i * cellheight + 25);        
     }
     
-    for(let i = 0; i < startpoints.length; i ++){
+        translate(4 * cellwidth, 0);
+    for (let i = 0; i < animals.length; i++) {
         push();
-        translate(200, 0);
-        translate(startpoints[i] * cellwidth, i * cellheight + 5);
-        rect(0,0, cellwidth, cellheight);
-        pop(); 
-    for(let i = 0; i < animals[i].length; i ++){
-         const startx = 
+        for (let j = 0; j < animals[i].length; j++) {
+            rect(
+                startpoints[i] * cellwidth,
+                0,
+                cellwidth,
+                cellheight);
+            translate(cellwidth, 0)
+        }
+        pop();
 
+        translate(0, cellheight);
     }
-    }
-
+    resetMatrix();
 }
+
