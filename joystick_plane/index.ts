@@ -7,12 +7,13 @@ const fighterDisplayWidth = fighterDisplayHeight * (fighterImageWidth / fighterI
 let fighterPositionX = 0;
 let fighterPositionY = 0;
 
-let smallcircleradius = 10;
-let smallcircleMx = 0;
-let smallcircleMy = 0;
+const movementRadius = 50;
+const stickRadius = 10;
 
-let startdragging = false;
+let stickPositionX = 0;
+let stickPositionY = 0;
 
+let isDragging = false;
 
 function preload() {
   fighter = loadImage("https://cddataexchange.blob.core.windows.net/images/Spaceship.png");
@@ -20,17 +21,28 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
-
-  smallcircleMx = width / 2;
-  smallcircleMy = height - 50;
-
-  mouseDragged();
-
-  
 }
 
 function draw() {
   background("lightblue");
+
+  if (fighterPositionX > width / 2) {
+    fighterPositionX = width / 2;
+  }
+  else if (fighterPositionX < -width / 2) {
+    fighterPositionX = -width / 2
+  }
+  if (fighterPositionY > width / 2) {
+    fighterPositionY = width / 2
+  }
+  else if (fighterPositionY < -width / 2) {
+    fighterPositionY = -width / 2
+  }
+
+  const speedX = stickPositionX / 5;
+  const speedY = stickPositionY / 5;
+  fighterPositionX += speedX;
+  fighterPositionY += speedY;
 
   push();
   imageMode(CENTER);
@@ -38,36 +50,53 @@ function draw() {
   image(fighter, 0, 0, fighterDisplayWidth, fighterDisplayHeight);
   pop();
 
+  push();
+  translate(width / 2, height - movementRadius);
+
   fill("white");
   stroke("red");
-  circle(width / 2, height - 50, 100);
+  circle(0, 0, movementRadius * 2);
 
-  noStroke();
   fill("black");
-  circle(smallcircleMx, smallcircleMy, 2 * smallcircleradius);
+  noStroke();
+  circle(stickPositionX, stickPositionY, stickRadius * 2);
+  pop();
+
+  text(`Speed: ${Math.round(speedX)}, ${Math.round(speedY)}`, 20, height - 30);
+  text(`Flight position: ${Math.round(fighterPositionX)}, ${Math.round(fighterPositionY)}`, 20, width - 20);
 }
 
-function distance (){
-}
-
-function mousePressed(x:number,y:number){
-  let dx = mouseX - x;
-  let dy = mouseY - y;
-
-  if(Math.sqrt(dx * dx + dy * dy) <= 10){
-    startdragging = true;
-  }
-  
+function mousePressed() {
+  // Is the mouse click inside the joystick?
+  const dist = calcDistance(
+    stickPositionX,
+    stickPositionY,
+    mouseX - width / 2,
+    mouseY - (height - movementRadius));
+  isDragging = dist < stickRadius;
+  // if (dist <= stickRadius) {
+  //   // inside
+  //   isDragging = true;
+  // } else {
+  //   // outside
+  //   isDragging = false;
+  // }
 }
 
 function mouseDragged() {
-  if(startdragging){
-    smallcircleMx = mouseX;
-    smallcircleMy = mouseY;
+  if (isDragging) {
+    stickPositionX = mouseX - width / 2;
+    stickPositionY = mouseY - (height - movementRadius);
   }
-  
 }
 
 function mouseReleased() {
-  
+}
+
+// This method returns the distance between center of joystick
+// and mouse position.
+function calcDistance(jsX: number, jsY: number, mX: number, mY: number): number {
+  const dx = jsX - mX;
+  const dy = jsY - mY;
+  return Math.sqrt(dx * dx + dy * dy);
 }
