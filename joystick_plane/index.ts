@@ -91,6 +91,7 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
+  isDragging = false;
 }
 
 // This method returns the distance between center of joystick
