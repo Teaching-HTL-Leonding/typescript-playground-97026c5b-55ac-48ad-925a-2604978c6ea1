@@ -7,6 +7,11 @@ const fighterDisplayWidth = fighterDisplayHeight * (fighterImageWidth / fighterI
 let fighterPositionX = 0;
 let fighterPositionY = 0;
 
+let smallcircleradius = 10;
+let smallcircleMx = 0;
+let smallcircleMy = 0;
+
+let startdragging = false;
 
 
 function preload() {
@@ -15,6 +20,13 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
+
+  smallcircleMx = width / 2;
+  smallcircleMy = height - 50;
+
+  mouseDragged();
+
+  
 }
 
 function draw() {
@@ -32,17 +44,30 @@ function draw() {
 
   noStroke();
   fill("black");
-  circle(width / 2, height - 50, 20);
+  circle(smallcircleMx, smallcircleMy, 2 * smallcircleradius);
 }
 
-function mousePressed() {
-  console.log(`mouse pressed`);
+function distance (){
+}
+
+function mousePressed(x:number,y:number){
+  let dx = mouseX - x;
+  let dy = mouseY - y;
+
+  if(Math.sqrt(dx * dx + dy * dy) <= 10){
+    startdragging = true;
+  }
+  
 }
 
 function mouseDragged() {
-  console.log(`mouse dragged`);
+  if(startdragging){
+    smallcircleMx = mouseX;
+    smallcircleMy = mouseY;
+  }
+  
 }
 
 function mouseReleased() {
-  console.log(`mouse released`);
+  
 }
