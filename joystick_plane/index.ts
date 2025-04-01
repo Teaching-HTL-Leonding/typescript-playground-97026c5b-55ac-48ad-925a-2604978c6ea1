@@ -26,18 +26,19 @@ function setup() {
 function draw() {
   background("lightblue");
 
-  if (fighterPositionX > width / 2) {
-    fighterPositionX = width / 2;
-  }
-  else if (fighterPositionX < -width / 2) {
-    fighterPositionX = -width / 2
-  }
-  if (fighterPositionY > width / 2) {
-    fighterPositionY = width / 2
-  }
-  else if (fighterPositionY < -width / 2) {
-    fighterPositionY = -width / 2
-  }
+      if(fighterPositionX > 250){
+      fighterPositionX = 250
+    }
+    else if(fighterPositionX < -250){
+      fighterPositionX = -250
+    }
+    if(fighterPositionY> 250){
+      fighterPositionY = 250
+    }
+    else if(fighterPositionY < -250){
+      fighterPositionY = -250
+    }
+  
 
   const speedX = stickPositionX / 5;
   const speedY = stickPositionY / 5;
@@ -61,17 +62,15 @@ function draw() {
   noStroke();
   circle(stickPositionX, stickPositionY, stickRadius * 2);
   pop();
-
-  text(`Speed: ${Math.round(speedX)}, ${Math.round(speedY)}`, 20, height - 30);
-  text(`Flight position: ${Math.round(fighterPositionX)}, ${Math.round(fighterPositionY)}`, 20, width - 20);
+  
 }
 
 function mousePressed() {
   // Is the mouse click inside the joystick?
   const dist = calcDistance(
-    stickPositionX,
-    stickPositionY,
-    mouseX - width / 2,
+    stickPositionX, 
+    stickPositionY, 
+    mouseX - width / 2, 
     mouseY - (height - movementRadius));
   isDragging = dist < stickRadius;
   // if (dist <= stickRadius) {
@@ -91,7 +90,6 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
-  isDragging = false;
 }
 
 // This method returns the distance between center of joystick
@@ -100,4 +98,6 @@ function calcDistance(jsX: number, jsY: number, mX: number, mY: number): number 
   const dx = jsX - mX;
   const dy = jsY - mY;
   return Math.sqrt(dx * dx + dy * dy);
+
+  
 }
