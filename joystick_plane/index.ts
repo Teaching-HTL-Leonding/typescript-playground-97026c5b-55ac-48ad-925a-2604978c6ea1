@@ -13,6 +13,13 @@ const stickRadius = 10;
 let stickPositionX = 0;
 let stickPositionY = 0;
 
+let stickX = 0;
+let stickY = 0;
+let stickOriginX = 0;
+let stickOriginY = 0;
+const controlStickRadius = 10;
+
+
 let isDragging = false;
 
 function preload() {
@@ -21,6 +28,8 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
+  stickOriginX = width / 2;
+  stickOriginY = height - movementRadius;
 }
 
 function draw() {
@@ -84,12 +93,23 @@ function mousePressed() {
 
 function mouseDragged() {
   if (isDragging) {
-    stickPositionX = mouseX - width / 2;
-    stickPositionY = mouseY - (height - movementRadius);
+    stickPositionX = mouseX - stickOriginX;
+    stickPositionY = mouseY - stickOriginY;
+
+    // Berechne die Distanz zum Zentrum des Joysticks
+    const distanceFromCenter = calcDistance(0, 0, stickPositionX, stickPositionY);
+    
+    // Falls der Stick außerhalb des Radius ist, skaliere ihn zurück
+    if (distanceFromCenter > movementRadius - controlStickRadius) {
+      const scale = (movementRadius - controlStickRadius) / distanceFromCenter;
+      stickPositionX *= scale;
+      stickPositionY *= scale;
+    }
   }
 }
 
 function mouseReleased() {
+  isDragging = false;
 }
 
 // This method returns the distance between center of joystick
